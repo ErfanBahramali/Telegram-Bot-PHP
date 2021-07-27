@@ -1,0 +1,61 @@
+<?php
+
+/*
+ * This file is part of the TelegramBotPHP package.
+ * https://github.com/ErfanBahramali/Telegram-Bot-PHP
+ */
+
+namespace TelegramBotPHP\Types\InputMedia;
+
+use TelegramBotPHP\Type;
+use TelegramBotPHP\Types\MessageEntity;
+
+/** 
+ * InputMedia Class
+ * 
+ * This object represents the content of a media message to be sent. It should be one of
+ *
+    - [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)
+    - [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)
+    - [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)
+    - [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)
+    - [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)
+ * 
+ * @link https://core.telegram.org/bots/api#inputmedia
+ */
+class InputMedia extends Type
+{
+    /**
+     * getTypeArrayVariables function
+     * To specify the type of value of arrays Variables
+     * 
+     * @return array
+     */
+    protected function getTypeArrayVariables()
+    {
+        return [
+            'captionEntities' => MessageEntity::class,
+        ];
+    }
+
+    /**
+     * getCheckField function
+     * name : filed and Variable name to identify data type
+     * datas : values: key(filed data) =>  value(data class)
+     * 
+     * @return array name and datas
+     */
+    protected function getCheckField()
+    {
+        return [
+            'name' => 'type',
+            'datas' => [
+                'photo' => InputMediaPhoto::class,
+                'video' => InputMediaVideo::class,
+                'animation' => InputMediaAnimation::class,
+                'audio' => InputMediaAudio::class,
+                'document' => InputMediaDocument::class,
+            ],
+        ];
+    }
+}

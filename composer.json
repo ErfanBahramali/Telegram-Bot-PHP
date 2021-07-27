@@ -1,0 +1,34 @@
+{
+    "name": "bahramali/telegram-bot-php",
+    "description": "Telegram-Bot-PHP is a PHP library for interacting with the official Telegram Bot API",
+    "keywords": [
+        "telegram bot php",
+        "telegram",
+        "bot",
+        "php",
+        "psr-4"
+    ],
+    "homepage": "https://github.com/ErfanBahramali/Telegram-Bot-PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erfan Bahramali",
+            "email": "ErfanBahramali@gmail.com",
+            "homepage": "https://bahramali.ir",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TelegramBotPHP\\": "src/"
+        }
+    }
+}
