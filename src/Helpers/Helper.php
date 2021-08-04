@@ -188,6 +188,16 @@ class Helper
     }
 
     /** 
+     * isRepliedMessage fucntion
+     * 
+     * @return bool return true, if message is replied
+     */
+    public static function isRepliedMessage()
+    {
+        return isset(self::$updateContent['reply_to_message']);
+    }
+
+    /** 
      * getId function
      * 
      * @return int|null Unique identifier
