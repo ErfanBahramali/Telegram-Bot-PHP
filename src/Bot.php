@@ -192,6 +192,61 @@ class Bot
     }
 
     /**
+     * downloadFile function
+     * 
+     * @param string $fileId
+     * @param string $localFilePath
+     * @return bool true if file downloaded
+     */
+    public static function downloadFile(string $filePath, string $localFilePath)
+    {
+        $fileSource = self::$config->botApiServerFileUrl . self::$token . '/' . $filePath;
+
+        $file = fopen($fileSource, 'rb');
+        $localFile = fopen($localFilePath, 'wb');
+
+        if (!$file || !$localFile) {
+            return false;
+        }
+
+        while (!feof($file)) {
+
+            if (fwrite($localFile, fread($file, 8192), 8192) === FALSE) {
+                return false;
+            }
+
+        }
+
+        fclose($file);
+        fclose($localFile);
+
+        return true;
+    }
+
+    /**
+     * downloadFileByFileId function
+     * 
+     * @param string $fileId
+     * @param string $localFilePath
+     * @return bool|Response true if file downloaded
+     */
+    public static function downloadFileByFileId(string $fileId, string $localFilePath)
+    {
+
+        $file = self::getFile([
+            'file_id' => $fileId,
+        ]);
+
+        if ($file->isOk()) {
+            
+            $filePath = $file->getResult()->filePath;
+            return self::downloadFile($filePath, $localFilePath);
+        }
+
+        return $file;
+    }
+
+    /**
      * isTelegramIp function
      * Check if a given ip is in a telegram ip range 
      * 
