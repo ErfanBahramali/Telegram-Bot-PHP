@@ -145,16 +145,16 @@ class Bot
 
         if ($responseHttpCode !== 200) {
 
-            if (self::$config->logError === true) {
+            $error = [
+                'request' => [
+                    'method' => $method,
+                    'parameters' => $parameters,
+                ],
+                'response' => $response,
+                'http_code' => $responseHttpCode,
+            ];
 
-                $error = [
-                    'request' => [
-                        'method' => $method,
-                        'parameters' => $parameters,
-                    ],
-                    'response' => $response,
-                    'http_code' => $responseHttpCode,
-                ];
+            if (self::$config->logError === true) {
 
                 self::$log->error($error);
             }
@@ -214,18 +214,18 @@ class Bot
                 'integer_id' => '1533805568',
             ],
         ];
-    
+
         $ip = trim($ip);
         $ipDecimal = ip2long($ip);
-    
+
         if (($ipDecimal & $ranges[0]['netmask_decimal']) == $ranges[0]['integer_id']) {
             return true;
         }
-    
+
         if (($ipDecimal & $ranges[1]['netmask_decimal']) == $ranges[1]['integer_id']) {
             return true;
         }
-    
+
         return false;
     }
 }
