@@ -34,9 +34,9 @@ use TelegramBotPHP\Response\Response;
 //  * @method static Response|array forwardMessage(array $parameters, string $token = null)  Use this method to forward messages of any kind. Service messages can't be forwarded. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. 
 //  * @method static Response|array copyMessage(array $parameters, string $token = null)  Use this method to copy messages of any kind. Service messages and invoice messages can't be copied. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api#forwardmessage), but the copied message doesn't have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api#messageid) of the sent message on success. 
 //  * @method static Response|array sendPhoto(array $parameters, string $token = null)  Use this method to send photos. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. 
- * @method static Response|array sendAudio(array $parameters, string $token = null)  Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future. For sending voice messages, use the [sendVoice](https://core.telegram.org/bots/api#sendvoice) method instead. 
- * @method static Response|array sendDocument(array $parameters, string $token = null)  Use this method to send general files. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future. 
- * @method static Response|array sendVideo(array $parameters, string $token = null)  Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as [Document](https://core.telegram.org/bots/api#document)). On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future. 
+//  * @method static Response|array sendAudio(array $parameters, string $token = null)  Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future. For sending voice messages, use the [sendVoice](https://core.telegram.org/bots/api#sendvoice) method instead. 
+//  * @method static Response|array sendDocument(array $parameters, string $token = null)  Use this method to send general files. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future. 
+//  * @method static Response|array sendVideo(array $parameters, string $token = null)  Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as [Document](https://core.telegram.org/bots/api#document)). On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future. 
  * @method static Response|array sendAnimation(array $parameters, string $token = null)  Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future. 
  * @method static Response|array sendVoice(array $parameters, string $token = null)  Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS (other formats may be sent as [Audio](https://core.telegram.org/bots/api#audio) or [Document](https://core.telegram.org/bots/api#document)). On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future. 
  * @method static Response|array sendVideoNote(array $parameters, string $token = null)  As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. 
@@ -219,6 +219,60 @@ trait Method
         }
 
         return self::__callStatic('sendPhoto', [$parameters, $token]);
+    }
+
+    /** 
+     * sendAudio function
+     * 
+     * Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future. For sending voice messages, use the [sendVoice](https://core.telegram.org/bots/api#sendvoice) method instead. 
+     * 
+     * @param array $parameters method Parameters
+     * @param string $token
+     * @return Response|array
+     */
+    public static function sendAudio(array $parameters, string $token = null)
+    {
+        if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+            $parameters['chat_id'] = Helper::getChatId();
+        }
+
+        return self::__callStatic('sendAudio', [$parameters, $token]);
+    }
+
+    /** 
+     * sendDocument function
+     * 
+     * Use this method to send general files. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future. 
+     * 
+     * @param array $parameters method Parameters
+     * @param string $token
+     * @return Response|array
+     */
+    public static function sendDocument(array $parameters, string $token = null)
+    {
+        if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+            $parameters['chat_id'] = Helper::getChatId();
+        }
+
+        return self::__callStatic('sendDocument', [$parameters, $token]);
+    }
+
+    /** 
+     * sendVideo function
+     * 
+     * Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as [Document](https://core.telegram.org/bots/api#document)). On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future. 
+     * 
+     * @param array $parameters method Parameters
+     * @param string $token
+     * @return Response|array
+     */
+    public static function sendVideo(array $parameters, string $token = null)
+    {
+        if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+            $parameters['chat_id'] = Helper::getChatId();
+        }
+
+        return self::__callStatic('sendVideo', [$parameters, $token]);
     }
 
     /** 
