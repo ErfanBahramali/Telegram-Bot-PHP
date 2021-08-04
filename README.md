@@ -22,6 +22,7 @@ Telegram Bot PHP is a PHP Library for interaction with [Telegram Bot API](https:
     - [Example](#example)
     - [Error](#error)
     - [Request](#request)
+- [Download File](#download-file)
 - [Helper](#helper)
 - [Format](#format)
 - [Exceptions](#exceptions)
@@ -640,6 +641,26 @@ $response->getRequestMethod(); // get request method name (sendMessage)
 $response->getRequestParameters(); // get request parameters as an array (['chat_id' => '184171927', 'text' => 'Example Text'])
 
 ```
+
+# Download File
+```php
+
+$bot->downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
+
+// or 
+
+Bot::downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
+
+// download file by file_id
+
+$bot->downloadFileByFileId('BQACAgQAAxkBAAJ0T2EJUDHTeXGcSBUrqFMgzZCQ0OJGAAIhCQACg2tJUEqm6016cXE9IAQ', __DIR__ . '/documents/example.txt');
+
+// or 
+
+Bot::downloadFileByFileId('BQACAgQAAxkBAAJ0T2EJUDHTeXGcSBUrqFMgzZCQ0OJGAAIhCQACg2tJUEqm6016cXE9IAQ', __DIR__ . '/documents/example.txt');
+
+```
+
 ## Helper
 Helpers are auxiliary functions for receiving certain values or checking some items or doing certain tasks
 
