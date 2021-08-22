@@ -19,7 +19,10 @@ class Log
         'time' => '',
     ];
 
-    private \PDO|string $connect;
+    /**
+     * @var \PDO|string
+     */
+    private $connect;
     private string $tableName;
     private string $columnName;
     private string $fileName;
@@ -37,7 +40,7 @@ class Log
      * 
      * @requires void
      */
-    public function __construct(\PDO|string $connect, string $tableName, string $columnName, string $fileName, bool $log)
+    public function __construct($connect, string $tableName, string $columnName, string $fileName, bool $log)
     {
         $this->connect = $connect;
         $this->tableName = $tableName;

@@ -218,10 +218,12 @@ You can use any database that PDO supports in this section. You can also use the
 
 ```php
 /**
- * Pdo database config or config files path
+ * Pdo database config or config files path,
  * If empty, they will be placed in the main project folder
+ * 
+ * @var \PDO|string
  */
-public \PDO|string $logDatabase = '';
+public $logDatabase = '';
 ```
 
 Log table name

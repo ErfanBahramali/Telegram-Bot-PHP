@@ -24,8 +24,10 @@ class BotCommandScopeChatMember extends BotCommandScope
 
 	/**
 	 * Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+	 * 
+	 * @var string|int
 	 */
-	public string|int $chatId;
+	public $chatId;
 
 	/**
 	 * Unique identifier of the target user

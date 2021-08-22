@@ -51,10 +51,12 @@ And the "chat_id" of the sender is considered automatic.
     // -------------- log --------------
 
     /**
-     * Pdo database config or config files path
+     * Pdo database config or config files path,
      * If empty, they will be placed in the main project folder
+     * 
+     * @var \PDO|string
      */
-    public \PDO|string $logDatabase = '';
+    public $logDatabase = '';
 
     /**
      * log dafault database table name
