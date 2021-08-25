@@ -56,13 +56,12 @@ And the "chat_id" of the sender is considered automatic.
      * 
      * @var \PDO|string
      */
-    public $logDatabase = '';
+    public static $logDatabase = '';
 
     /**
      * log dafault database table name
      */
     public static string $logDatabaseTableName = 'logs';
-
 
     /**
      * log dafault database column name
