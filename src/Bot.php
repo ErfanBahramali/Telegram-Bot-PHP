@@ -139,9 +139,10 @@ class Bot
         ]);
 
         $response = curl_exec($ch);
-        curl_close($ch);
         $response = json_decode($response, true);
+
         $responseHttpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
 
         if ($responseHttpCode !== 200) {
 
@@ -214,7 +215,6 @@ class Bot
             if (fwrite($localFile, fread($file, 8192), 8192) === FALSE) {
                 return false;
             }
-
         }
 
         fclose($file);
@@ -238,7 +238,7 @@ class Bot
         ]);
 
         if ($file->isOk()) {
-            
+
             $filePath = $file->getResult()->filePath;
             return self::downloadFile($filePath, $localFilePath);
         }
