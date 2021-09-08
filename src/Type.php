@@ -27,7 +27,7 @@ class Type
     //  * @param array $data
     //  * @return object
     //  */
-    // protected function checkClassType(array $data)
+    // private function checkClassType(array $data)
     // {
     //     return;
     // }
@@ -39,7 +39,7 @@ class Type
     //  * 
     //  * @return array name and datas
     //  */
-    // protected function getCheckField()
+    // private function getCheckField()
     // {
     //     return [
     //         'name' => 'source',
@@ -78,12 +78,12 @@ class Type
     public function __construct(array $data)
     {
 
-        if (method_exists($this, 'checkClassType')) {
+        if (is_callable([$this, 'checkClassType'])) {
             $class = $this->checkClassType($data);
             return (new $class($data));
         }
 
-        if (method_exists($this, 'getCheckField')) {
+        if (is_callable([$this, 'getCheckField'])) {
 
             $checkField = $this->getCheckField();
             $checkFieldName = $checkField['name'];
@@ -104,10 +104,10 @@ class Type
             $key = Format::toCamelCase($key);
 
             if (is_array($value)) {
-                if (method_exists($this, 'getTypeVariables') && isset($this->getTypeVariables()[$key])) {
+                if (is_callable([$this, 'getTypeVariables']) && isset($this->getTypeVariables()[$key])) {
                     $class = $this->getTypeVariables()[$key];
                     $value = new $class($value);
-                } elseif (method_exists($this, 'getTypeArrayVariables') && isset($this->getTypeArrayVariables()[$key])) {
+                } elseif (is_callable([$this, 'getTypeArrayVariables']) && isset($this->getTypeArrayVariables()[$key])) {
 
                     $class = $this->getTypeArrayVariables()[$key];
 

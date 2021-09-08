@@ -46,7 +46,7 @@ class ChatMember extends Type
      * 
      * @return array name and datas
      */
-    protected function getCheckField()
+    private function getCheckField()
     {
         return [
             'name' => 'status',

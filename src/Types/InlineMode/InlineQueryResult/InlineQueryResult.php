@@ -48,7 +48,7 @@ class InlineQueryResult extends Type
      * @param array $data
      * @return object
      */
-    protected function checkClassType(array $data)
+    private function checkClassType(array $data)
     {
         /** 
          * for cached

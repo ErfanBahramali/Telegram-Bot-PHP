@@ -35,7 +35,7 @@ class PassportElementError extends Type
      * 
      * @return array name and datas
      */
-    protected function getCheckField()
+    private function getCheckField()
     {
         return [
             'name' => 'source',
