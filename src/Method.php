@@ -139,6 +139,7 @@ trait Method
     public static function sendMessage(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+
             $parameters['chat_id'] = Helper::getChatId();
         }
 
@@ -157,16 +158,19 @@ trait Method
     public static function forwardMessage(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters) {
-            
+
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['from_chat_id'])) {
+
                 $parameters['from_chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
         }
@@ -186,16 +190,19 @@ trait Method
     public static function copyMessage(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters) {
-            
+
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['from_chat_id'])) {
+
                 $parameters['from_chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
         }
@@ -215,6 +222,7 @@ trait Method
     public static function sendPhoto(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+
             $parameters['chat_id'] = Helper::getChatId();
         }
 
@@ -233,6 +241,7 @@ trait Method
     public static function sendAudio(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+
             $parameters['chat_id'] = Helper::getChatId();
         }
 
@@ -251,6 +260,7 @@ trait Method
     public static function sendDocument(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+
             $parameters['chat_id'] = Helper::getChatId();
         }
 
@@ -269,6 +279,7 @@ trait Method
     public static function sendVideo(array $parameters, string $token = null)
     {
         if (self::$config->autofillParameters && !isset($parameters['chat_id'])) {
+
             $parameters['chat_id'] = Helper::getChatId();
         }
 
@@ -289,10 +300,12 @@ trait Method
         if (self::$config->autofillParameters && !isset($parameters['inline_message_id'])) {
 
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
         }
@@ -314,10 +327,12 @@ trait Method
         if (self::$config->autofillParameters && !isset($parameters['inline_message_id'])) {
 
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
         }
@@ -339,10 +354,12 @@ trait Method
         if (self::$config->autofillParameters && !isset($parameters['inline_message_id'])) {
 
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
         }
@@ -364,10 +381,12 @@ trait Method
         if (self::$config->autofillParameters && !isset($parameters['inline_message_id'])) {
 
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
         }
@@ -389,13 +408,14 @@ trait Method
         if (self::$config->autofillParameters) {
 
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
-
         }
 
         return self::__callStatic('stopPoll', [$parameters, $token]);
@@ -424,13 +444,14 @@ trait Method
         if (self::$config->autofillParameters) {
 
             if (!isset($parameters['chat_id'])) {
+
                 $parameters['chat_id'] = Helper::getChatId();
             }
 
             if (!isset($parameters['message_id'])) {
+
                 $parameters['message_id'] = Helper::getMessageId();
             }
-
         }
 
         return self::__callStatic('deleteMessage', [$parameters, $token]);
@@ -448,11 +469,13 @@ trait Method
         $name = Format::toCamelCase($name);
 
         if (in_array($name, self::$parameterlessMethods)) {
+
             $parameters[1] = $parameters[0] ?? null;
             $parameters[0] = [];
         }
 
         if (isset($parameters[0]['reply_markup']) && is_array($parameters[0]['reply_markup'])) {
+
             $parameters[0]['reply_markup'] = json_encode($parameters[0]['reply_markup']);
         }
 

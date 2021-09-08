@@ -33,6 +33,7 @@ class Response
         $this->data = $data;
 
         if (isset($this->data['ok']) && $this->data['ok'] === true) {
+
             $this->result = $this->convertToResponseType($data['result']);
         }
     }
@@ -55,16 +56,20 @@ class Response
             'empty_list',
         ];
          */
-        
+
         if (is_array($result) && !empty($result)) {
 
             if (is_array($resultType)) {
-                
+
                 $class = $resultType[0];
+
                 $resultArray = [];
+
                 foreach ($result as $value) {
+
                     $resultArray[] = new $class($value);
                 }
+
                 return $resultArray;
             }
 

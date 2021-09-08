@@ -41,11 +41,14 @@ class Bot
     public function __construct(string $token, Config $config = null)
     {
         self::$token = $token;
+
         if (is_null($config)) {
+
             $config = new Config();
         }
 
         self::$config = $config;
+
         self::$log = new Log(
             $config->logDatabase,
             $config->logDatabaseTableName,
@@ -55,6 +58,7 @@ class Bot
         );
 
         if (self::$config->autoUseWebhook) {
+
             return $this->setUpdate();
         }
     }
@@ -77,11 +81,14 @@ class Bot
             self::$input = $input;
 
             if (self::$config->convertToObject) {
+
                 self::$update = new Update($input);
+
                 self::$helper = new Helper($input);
             }
 
             if (self::$config->logUpdate) {
+
                 self::$log->update($input);
             }
 
@@ -131,6 +138,7 @@ class Bot
         $token = is_null($token) ? self::$token : $token;
         $botApiServerUrl = self::$config->botApiServerUrl;
         $url = "{$botApiServerUrl}{$token}/{$method}";
+
         $ch = curl_init($url);
 
         curl_setopt_array($ch, [
@@ -166,7 +174,9 @@ class Bot
                 throw new BotException("something went wrong. Request failed Error: {$error}");
             }
         } else {
+
             if (self::$config->logRequest === true && self::$config->logResponse === false) {
+
                 self::$log->request([
                     'method' => $method,
                     'parameters' => $parameters,
@@ -174,10 +184,12 @@ class Bot
             }
 
             if (self::$config->logRequest === false && self::$config->logResponse === true) {
+
                 self::$log->response($response);
             }
 
             if (self::$config->logRequest === true && self::$config->logResponse === true) {
+
                 self::$log->requestAndResponse([
                     'method' => $method,
                     'parameters' => $parameters,
@@ -186,6 +198,7 @@ class Bot
         }
 
         if (self::$config->convertToObject) {
+
             return new Response($response, $method, $parameters);
         }
 
@@ -207,12 +220,14 @@ class Bot
         $localFile = fopen($localFilePath, 'wb');
 
         if (!$file || !$localFile) {
+
             return false;
         }
 
         while (!feof($file)) {
 
             if (fwrite($localFile, fread($file, 8192), 8192) === FALSE) {
+
                 return false;
             }
         }
@@ -240,6 +255,7 @@ class Bot
         if ($file->isOk()) {
 
             $filePath = $file->getResult()->filePath;
+
             return self::downloadFile($filePath, $localFilePath);
         }
 
@@ -274,10 +290,12 @@ class Bot
         $ipDecimal = ip2long($ip);
 
         if (($ipDecimal & $ranges[0]['netmask_decimal']) == $ranges[0]['integer_id']) {
+
             return true;
         }
 
         if (($ipDecimal & $ranges[1]['netmask_decimal']) == $ranges[1]['integer_id']) {
+
             return true;
         }
 

@@ -28,8 +28,8 @@ class BotCommandScope extends Type
 {
     /**
      * getCheckField function
-     * name : filed and Variable name to identify data type
-     * datas : values: key(filed data) =>  value(data class)
+     * name : field and Variable name to identify data type
+     * datas : values: key(field data) =>  value(data class)
      * 
      * @return array name and datas
      */

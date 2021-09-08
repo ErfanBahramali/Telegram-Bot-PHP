@@ -46,7 +46,9 @@ class InputMessageContent extends Type
         ];
 
         foreach ($checkFieldDatas as $class => $keys) {
+
             if ($this->keysExistsInData($keys, $data)) {
+
                 return $class;
             }
         }

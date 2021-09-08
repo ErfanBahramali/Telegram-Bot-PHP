@@ -65,19 +65,21 @@ class InlineQueryResult extends Type
         ];
 
         foreach ($checkCachedFieldDatas as $key => $value) {
+
             if (array_key_exists($key, $data)) {
+
                 return $value;
             }
         }
 
         /** 
-         * filed and Variable name to identify data type
+         * field and Variable name to identify data type
          */
         $checkField = 'type';
 
         /** 
          * values: 
-         *          key(filed data) =>  value(data class)
+         *          key(field data) =>  value(data class)
          */
         $checkFieldDatas = [
             'article' => InlineQueryResultArticle::class,
@@ -95,11 +97,13 @@ class InlineQueryResult extends Type
         ];
 
         $fieldData = $data[$checkField];
+
         if (array_key_exists($fieldData, $checkFieldDatas)) {
+
             $class = $checkFieldDatas[$fieldData];
             return $class;
         }
-        
+
         throw new BotException('InlineQueryResult Class Type Not Found.');
     }
 }

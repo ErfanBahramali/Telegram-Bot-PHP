@@ -26,22 +26,27 @@ class Format
     public static function mention(int $userId = null, string $text = null, string $parseMode = ParseMode::MARKDOWN): string
     {
         if (is_null($userId)) {
+
             $userId = Helper::getUserId();
         }
 
         if (empty($text)) {
+
             $text = Helper::getMessageText();
         }
 
         $parseMode = strtolower($parseMode);
-        
+
         if ($parseMode == ParseMode::MARKDOWNV2) {
+
             $text = self::markdownV2($text);
             $url = "[{$text}](tg://user?id={$userId})";
         } elseif ($parseMode == ParseMode::HTML) {
+
             $text = self::html($text);
             $url = "<a href=\"tg://user?id={$userId}\">{$text}</a>";
         } else {
+
             $text = self::markdown($text);
             $url = "[{$text}](tg://user?id={$userId})";
         }
@@ -152,9 +157,12 @@ class Format
     public static function toCamelCase(string $string, bool $capitalizeFirstCharacter = true): string
     {
         $string = str_replace('_', '', ucwords($string, '_'));
+
         if ($capitalizeFirstCharacter) {
+
             $string = lcfirst($string);
         }
+
         return $string;
     }
 }

@@ -34,8 +34,8 @@ class Type
 
     // /**
     //  * getCheckField function
-    //  * name : filed and Variable name to identify data type
-    //  * datas : values: key(filed data) =>  value(data class)
+    //  * name : field and Variable name to identify data type
+    //  * datas : values: key(field data) =>  value(data class)
     //  * 
     //  * @return array name and datas
     //  */
@@ -79,9 +79,12 @@ class Type
     {
 
         if (is_callable([$this, 'checkClassType'])) {
+
             $class = $this->checkClassType($data);
+
             return (new $class($data));
         }
+
 
         if (is_callable([$this, 'getCheckField'])) {
 
@@ -92,20 +95,28 @@ class Type
             $fieldData = $data[$checkFieldName];
 
             if (array_key_exists($fieldData, $checkFieldDatas)) {
+
                 $class = $checkFieldDatas[$fieldData];
+
                 return (new $class($data));
             }
 
             $className = get_class($this);
+
             throw new BotException("{$className} {$checkFieldName} Not Found.");
         }
 
+
         foreach ($data as $key => $value) {
+
             $key = Format::toCamelCase($key);
 
             if (is_array($value)) {
+
                 if (is_callable([$this, 'getTypeVariables']) && isset($this->getTypeVariables()[$key])) {
+
                     $class = $this->getTypeVariables()[$key];
+
                     $value = new $class($value);
                 } elseif (is_callable([$this, 'getTypeArrayVariables']) && isset($this->getTypeArrayVariables()[$key])) {
 
@@ -125,6 +136,7 @@ class Type
                     } else {
 
                         foreach ($value as &$valueData) {
+
                             $valueData = new $class($valueData);
                         }
                     }
@@ -145,10 +157,13 @@ class Type
     protected function keysExistsInData(array $keys, array $data)
     {
         foreach ($keys as $value) {
+
             if (array_key_exists($value, $data) === false) {
+
                 return false;
             }
         }
+
         return true;
     }
 
