@@ -18,7 +18,7 @@ Telegram Bot PHP is a PHP Library for interaction with [Telegram Bot API](https:
     - [Set Config](#set-config)
 - [Update](#update)
     - [Webhook](#webhook)
-    - [get-update](#get-update)
+    - [get-updates](#get-updates)
 - [Methods](#methods)
     - [Keyboards](#keyboards)
 - [Response](#response)
@@ -41,7 +41,7 @@ Telegram Bot PHP is a PHP Library for interaction with [Telegram Bot API](https:
 
 ## Requirements
 
-*Please read the [Telegram API document](https://core.telegram.org/bots/api) at least once*
+**Please read the [Telegram API document](https://core.telegram.org/bots/api) at least once**
 
 * Read [Telegram API document](https://core.telegram.org/bots/api)
 * php >=7.4
@@ -58,7 +58,6 @@ composer require bahramali/telegram-bot-php
 
 ```
 php composer.phar require bahramali/telegram-bot-php
-
 ```
 **or**
 
@@ -70,7 +69,6 @@ Create `composer.json` file and add
         "bahramali/telegram-bot-php": "*"
     }
 }
-
 ```
 and run 
 ```
@@ -83,7 +81,7 @@ composer update
 
 To use this library, you need to require the Composer Autoloader And create a new object from the bot class
 
-*Please read the [Telegram API document](https://core.telegram.org/bots/api) at least once*
+**Please read the [Telegram API document](https://core.telegram.org/bots/api) at least once**
 
 ```php
 
@@ -109,7 +107,7 @@ https://example.com/bot?example=1a79a4d60de6718e8e5b326e338ae533
 
 ```php
 if ($_GET['example'] == '1a79a4d60de6718e8e5b326e338ae533') {
-    // codes
+    // code
 } else {
     // 404 not found
 }
@@ -125,13 +123,15 @@ if ($_GET['example'] == '1a79a4d60de6718e8e5b326e338ae533') {
 $ip = $_SERVER['REMOTE_ADDR'];
 
 if (Bot::isTelegramIp($ip)) {
-    // codes
+    // code
 } else {
     // 404 not found
 }
 ```
 ## Config
 ### Configs
+
+**You can adjust the configuration and change it in each section**
 
 if you are using a local bot api server, Set up your server url
 
@@ -153,7 +153,9 @@ if you are using a local bot api server, Set up your server file url, for downlo
 public string $botApiServerFileUrl = 'https://api.telegram.org/file/bot'; // https://example.com/example/file/bot{__BOT_API_TOKEN__}/{__FILE_PATH__}
 ```
 
-Convert updates and result requests to objects for easier access, You can set the variable to false and receive updates and the result of their request as an array
+Convert updates and response to objects for easier access
+
+Also you can set the variable to false and receive updates and response as an array
 
 ```php
 /** 
@@ -162,7 +164,7 @@ Convert updates and result requests to objects for easier access, You can set th
 public bool $convertToObject = true;
 ```
 
-If you want to use Webhook automatically, set this variable to true so that the update is received automatically.
+If you don't want to use Webhook automatically, set this variable to false
 
 ```php
 /** 
@@ -171,12 +173,9 @@ If you want to use Webhook automatically, set this variable to true so that the 
  */
 public bool $autoUseWebhook = true;
 ```
+If you don't want some methods to have some of their parameters automatically, set this variable to false
 
-If you want some methods to automatically have some of their own parameters, Set this variable to true
-
-It is not always guaranteed to be accurate, but it is easy to use if you 
-
-These methods are added over 
+**Its accuracy is not always guaranteed**
 
 ```php
 /** 
@@ -191,11 +190,9 @@ These methods are added over
 public bool $autofillParameters = true;
 ```
 
-If you do not want the program to continue after the error and stop, set this variable to true, This is only for when the result of the submitted request is not equal to 200, Then you can set this variable to true so that the program does not continue or set it to false to continue and return as a result
+If you want the program to continue after the error, set this variable to false
 
-**Of course, this does not apply to all parts of the program**
-
-**It is recommended that this variable always be true and checked with a [try catch](https://www.php.net/manual/en/language.exceptions.php) in case of error**
+**This is only for when the response code of the submitted request is not equal to 200**
 
 ```php
 /** 
@@ -346,14 +343,16 @@ $config->onLog = function (array $log) {
 
 There are two ways to receive the update
 
+**There is no difference between camelCase and under_score to get the parameters**
+
 ### Webhook 
 
-If you are using a web hook you can get updates using the 'getUpdate' and 'getInput' functions
+If you are using a webhook you can get updates using the 'getUpdate' and 'getInput' functions
 
 https://core.telegram.org/bots/api#setwebhook
 
 ```php
-// Do not confuse this function with the 'getUpdates' method of Telegram it is 'getupdate'
+// Do not confuse this function with the 'getUpdates' method of Telegram, it is 'getupdate'
 $update = $bot->getUpdate(); // TelegramBotPHP\Types\Update Object ([updateId] => 585985242 [message] => TelegramBotPHP\Types\Message Object ( ... ))
 
 $update = $bot->getInput(); // Array ([update_id] => 585985243 [message] => Array ( ... ))
@@ -363,18 +362,22 @@ $update = $bot->getInput(); // Array ([update_id] => 585985243 [message] => Arra
 
 ```php
 $update = $bot->getUpdate(); // TelegramBotPHP\Types\Update Object ([updateId] => 585985242 [message] => TelegramBotPHP\Types\Message Object ( ... ))
+
 $messageId = $update->message->message_id; // 28236
 // or
 $messageId = $update->message->messageId; // 28236
 
 $text = $update->message->text; // Example Text
 
+// or
 $update = $bot->getInput(); // Array ([update_id] => 585985243 [message] => Array ( ... ))
+
 $messageId = $update['message']['message_id']; // 28236
+
 $text = $update['message']['text']; // Example Text
 
 ```
-### Get Update
+### Get Updates
 
 Returns an array of update object
 
@@ -391,13 +394,15 @@ $updates = $bot->getUpdates()->getResult();// Array ([0] => TelegramBotPHP\Types
 ```php
 $updates = $bot->getUpdates()->getResult();// Array ([0] => TelegramBotPHP\Types\Update Object ( ... ) [1] => TelegramBotPHP\Types\Update Object ( ... ) [2] => TelegramBotPHP\Types\Update Object ( ... ))
 foreach ($updates as $key => $update) {
+
     $chatId = $update->chat->id; // 184171927
     // or you can create helper 
 }
 ```
 
 ## Methods 
-To use the methods, all you have to do is type in the name of the method and apply an array of parameters listed in the [Telegram api document](https://core.telegram.org/bots/api#available-methods).
+
+To use the methods, all you have to do is type in the name of the method and pass an array of parameters listed in the [Telegram api document](https://core.telegram.org/bots/api#available-methods).
 
 ```php 
 
@@ -557,6 +562,7 @@ $bot->sendMessage([
 
 ## Response
 
+**There is no difference between camelCase and under_score to get the parameters**
 ### Get Response
 
 ```php 
@@ -636,15 +642,28 @@ $response->getRequestParameters(); // get request parameters as an array (['chat
 ```
 
 # Download File
+
 ```php
 
+// downloadFile($filePath, $localFilePath)
+
+// $fileSource = self::$config->botApiServerFileUrl . self::$token . '/' . $filePath;
+
 $bot->downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
+
+// $fileSource = self::$config->botApiServerFileUrl . self::$token . '/' . 'documents/example.txt';
 
 // or 
 
 Bot::downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
 
-// download file by file_id
+```
+
+### download file by file_id
+
+```php
+
+// downloadFileByFileId($fileId, $localFilePath)
 
 $bot->downloadFileByFileId('BQACAgQAAxkBAAJ0T2EJUDHTeXGcSBUrqFMgzZCQ0OJGAAIhCQACg2tJUEqm6016cXE9IAQ', __DIR__ . '/documents/example.txt');
 
@@ -655,9 +674,13 @@ Bot::downloadFileByFileId('BQACAgQAAxkBAAJ0T2EJUDHTeXGcSBUrqFMgzZCQ0OJGAAIhCQACg
 ```
 
 ## Helper
+
 Helpers are auxiliary functions for receiving certain values or checking some items or doing certain tasks
 
-**Note: You can see the full list of functions in the helper class**
+**Note: You can see the full list of functions in the [`Helpers Folder`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/tree/main/src/Helpers)**
+
+
+**There is no difference between camelCase and under_score to get the parameters**
 
 #### Example:
 
@@ -675,6 +698,7 @@ You can also create a new helper with the input update array
 
 ```php
 $helper = new Helper({__Input_Update_Array__});
+
 // Example:
 $helper = new Helper($bot->getInput());
 ```
@@ -730,7 +754,9 @@ $text = Format::markdown('*bold text*'); // \*bold text\*
 #### Example:
 
 ```php
+
 $text = Format::markdownV2('*bold \*text*');
+
 Bot::sendMessage([
     'chat_id' => '184171927',
     'text' => "*{$text}*",
@@ -754,7 +780,7 @@ If you want to check the type of updates
 
 You can use helpers
 
-**You can see the full list of 'updateTypeIs...' functions in the helper type class**
+**You can see the full list of 'updateTypeIs...' functions in the [`helper type class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/Helpers/Helper.php)**
 
 #### Example:
 
@@ -776,7 +802,7 @@ if (Helper::updateTypeIsMessage()) {
 
 You can use the 'getUpdateType' helper to get the type of update and then check it using different types of updates
 
-**You can see the full list of update types in the update type class**
+**You can see the full list of update types in the [`update type class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/constants/UpdateType.php)**
 
 #### Example:
 
@@ -797,7 +823,7 @@ if ($updateType === UpdateType::MESSAGE) {
 
 You can use existing chat actions to send chat action
 
-**You can see the full list of chat actions in the chat action class**
+**You can see the full list of chat actions in the chat [`action class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/constants/ChatAction.php)**
 
 #### Example:
 
