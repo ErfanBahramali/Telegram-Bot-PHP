@@ -51,65 +51,56 @@ And the "chat_id" of the sender is considered automatic.
     // -------------- log --------------
 
     /**
-     * Pdo database config or config files path,
-     * If empty, they will be placed in the main project folder
-     * 
-     * @var \PDO|string
+     * call on log
+     * @var callback
      */
-    public $logDatabase = '';
+    public $onLog = false;
 
     /**
-     * log dafault database table name
+     * call on log update
+     * @var callback
      */
-    public string $logDatabaseTableName = 'logs';
-
-
-    /**
-     * log dafault database column name
-     */
-    public string $logDatabaseColumnName = 'data';
+    public $onLogUpdate = false;
 
     /**
-     * log dafault file name
+     * call on log request and response
+     * @var callback
      */
-    public string $logDatabaseDefaultFileName = 'bot.log';
+    public $onLogRequestAndResponse = false;
 
     /**
-     * Log updates
+     * call on log error
+     * @var callback
      */
-    public bool $logUpdate = true;
-
-    /**
-     * Log requests
-     */
-    public bool $logRequest = true;
-
-    /**
-     * Log response
-     */
-    public bool $logResponse = true;
-
-    /**
-     * Log errors
-     */
-    public bool $logError = true;
+    public $onLogError = false;
 
     // -------------- log --------------
 
     public function __construct()
     {
         $this->botApiServerUrl = MainConfig::$botApiServerUrl;
+
+        $this->botApiServerFileUrl = MainConfig::$botApiServerFileUrl;
+
         $this->convertToObject = MainConfig::$convertToObject;
+
         $this->autoUseWebhook = MainConfig::$autoUseWebhook;
+
         $this->autofillParameters = MainConfig::$autofillParameters;
+
         $this->throwOnError = MainConfig::$throwOnError;
-        $this->logDatabase = MainConfig::$logDatabase;
-        $this->logDatabaseTableName = MainConfig::$logDatabaseTableName;
-        $this->logDatabaseColumnName = MainConfig::$logDatabaseColumnName;
-        $this->logDatabaseDefaultFileName = MainConfig::$logDatabaseDefaultFileName;
-        $this->logUpdate = MainConfig::$logUpdate;
-        $this->logRequest = MainConfig::$logRequest;
-        $this->logResponse = MainConfig::$logResponse;
-        $this->logError = MainConfig::$logError;
+
+
+        // -------------- log --------------
+
+        $this->onLog = MainConfig::$onLog;
+
+        $this->onLogUpdate = MainConfig::$onLogUpdate;
+
+        $this->onLogRequestAndResponse = MainConfig::$onLogRequestAndResponse;
+
+        $this->onLogError = MainConfig::$onLogError;
+
+        // -------------- log --------------
     }
 }

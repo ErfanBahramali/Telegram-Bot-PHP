@@ -7,8 +7,10 @@
 
 namespace TelegramBotPHP\Log;
 
+use TelegramBotPHP\Config\Config;
+
 /** 
- * class BotLog
+ * class Log
  */
 class Log
 {
@@ -16,37 +18,25 @@ class Log
         'update' => [],
         'requests' => [],
         'errors' => [],
-        'time' => '',
+        'time' => [
+            'start' => '',
+            'end' => '',
+        ],
     ];
 
-    /**
-     * @var \PDO|string
-     */
-    private $connect;
-    private string $tableName;
-    private string $columnName;
-    private string $fileName;
-
-    private bool $log;
+    private Config $config;
 
     /**
      * __construct function
      * 
-     * @param \PDO|string $connect
-     * @param string $tableName
-     * @param string $columnName
-     * @param string $fileName
-     * @param string $log
-     * 
-     * @requires void
+     * @param Config $config
+     * @return void
      */
-    public function __construct($connect, string $tableName, string $columnName, string $fileName, bool $log)
+    public function __construct(Config $config)
     {
-        $this->connect = $connect;
-        $this->tableName = $tableName;
-        $this->columnName = $columnName;
-        $this->fileName = $fileName;
-        $this->log = $log;
+        $this->config = $config;
+
+        $this->data['time']['start'] = time();
     }
 
     /** 
@@ -57,43 +47,42 @@ class Log
      */
     public function update(array $update)
     {
-        $this->data['update'] = $update;
+        if (is_callable($this->config->onLog)) {
+
+            $this->data['update'] = $update;
+        }
+
+        $logUpdateFunction = $this->config->onLogUpdate;
+
+        if (is_callable($logUpdateFunction)) {
+
+            $logUpdateFunction($update);
+        }
     }
 
     /** 
      * requestAndResponse function
      * 
      * @param array $request
+     * @param array $response
      * @return void
      */
     public function requestAndResponse(array $request, array $response)
     {
-        $this->data['requests'][] = [
-            'request' => $request,
-            'response' => $response,
-        ];
-    }
+        if (is_callable($this->config->onLog)) {
 
-    /** 
-     * request function
-     * 
-     * @param array $request
-     * @return void
-     */
-    public function request(array $request)
-    {
-        $this->data['requests'][] = ['request' => $request];
-    }
+            $this->data['requests'][] = [
+                'request' => $request,
+                'response' => $response,
+            ];
+        }
 
-    /** 
-     * response function
-     * 
-     * @param array $response
-     * @return void
-     */
-    public function response(array $response)
-    {
-        $this->data['requests'][] = ['response' => $response];
+        $logRequestAndResponseFunction = $this->config->onLogRequestAndResponse;
+
+        if (is_callable($logRequestAndResponseFunction)) {
+
+            $logRequestAndResponseFunction($request, $response);
+        }
     }
 
     /** 
@@ -104,35 +93,33 @@ class Log
      */
     public function error(array $error)
     {
-        $this->data['errors'][] = $error;
+        if (is_callable($this->config->onLog)) {
+
+            $this->data['errors'][] = $error;
+        }
+
+        $logErrorFunction = $this->config->onLogError;
+
+        if (is_callable($logErrorFunction)) {
+
+            $logErrorFunction($error);
+        }
     }
 
     /** 
      * __destruct function
-     * set log to file or Database
      * 
      * @return mixed
      */
     public function __destruct()
     {
-        if ($this->log === false) {
-            return;
-        }
-        
-        $connect = $this->connect;
-        $this->data['time'] = time();
-        $data = json_encode($this->data);
+        $this->data['time']['end'] = time();
 
-        if ($connect instanceof \PDO) {
-            /**
-             * @var \PDO $connect
-             */
-            $pdo = $connect->prepare("INSERT INTO `{$this->tableName}` (`{$this->columnName}`) VALUES (?)");
-            return $pdo->execute([$data]);
-        }
+        $logFunction = $this->config->onLog;
 
-        $connect = (empty($connect) || mb_substr($connect, -1) === '/') ? $connect : "{$connect}/";
-        print_r($connect);
-        return file_put_contents("{$connect}{$this->fileName}", "{$data}\n", FILE_APPEND);
+        if (is_callable($logFunction)) {
+
+            $logFunction($this->data);
+        }
     }
 }

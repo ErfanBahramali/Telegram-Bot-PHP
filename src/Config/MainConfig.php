@@ -51,47 +51,28 @@ And the "chat_id" of the sender is considered automatic.
     // -------------- log --------------
 
     /**
-     * Pdo database config or config files path, 
-     * If empty, they will be placed in the main project folder
-     * 
-     * @var \PDO|string
+     * call on log
+     * @var callback
      */
-    public static $logDatabase = '';
+    public static $onLog = false;
 
     /**
-     * log dafault database table name
+     * call on log update
+     * @var callback
      */
-    public static string $logDatabaseTableName = 'logs';
+    public static $onLogUpdate = false;
 
     /**
-     * log dafault database column name
+     * call on log request and response
+     * @var callback
      */
-    public static string $logDatabaseColumnName = 'data';
+    public static $onLogRequestAndResponse = false;
 
     /**
-     * log dafault file name
+     * call on log error
+     * @var callback
      */
-    public static string $logDatabaseDefaultFileName = 'bot.log';
-
-    /**
-     * Log updates
-     */
-    public static bool $logUpdate = true;
-
-    /**
-     * Log requests
-     */
-    public static bool $logRequest = true;
-
-    /**
-     * Log response
-     */
-    public static bool $logResponse = true;
-
-    /**
-     * Log errors
-     */
-    public static bool $logError = true;
+    public static $onLogError = false;
 
     // -------------- log --------------
 }

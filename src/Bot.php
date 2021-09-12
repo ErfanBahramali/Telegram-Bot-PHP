@@ -42,20 +42,9 @@ class Bot
     {
         self::$token = $token;
 
-        if (is_null($config)) {
+        self::$config = is_null($config) ? new Config() : $config;
 
-            $config = new Config();
-        }
-
-        self::$config = $config;
-
-        self::$log = new Log(
-            $config->logDatabase,
-            $config->logDatabaseTableName,
-            $config->logDatabaseColumnName,
-            $config->logDatabaseDefaultFileName,
-            ($config->logUpdate || $config->logRequest || $config->logResponse || $config->logError),
-        );
+        self::$log = new Log(self::$config);
 
         if (self::$config->autoUseWebhook) {
 
@@ -87,10 +76,7 @@ class Bot
                 self::$helper = new Helper($input);
             }
 
-            if (self::$config->logUpdate) {
-
-                self::$log->update($input);
-            }
+            self::$log->update($input);
 
             return self::$update;
         }
@@ -163,38 +149,22 @@ class Bot
                 'http_code' => $responseHttpCode,
             ];
 
-            if (self::$config->logError === true) {
+            self::$log->error($error);
 
-                self::$log->error($error);
-            }
-
-            if (self::$config->throwOnError === true) {
+            if (self::$config->throwOnError) {
 
                 $error = json_encode($error);
                 throw new BotException("something went wrong. Request failed Error: {$error}");
             }
         } else {
 
-            if (self::$config->logRequest === true && self::$config->logResponse === false) {
-
-                self::$log->request([
+            self::$log->requestAndResponse(
+                [
                     'method' => $method,
                     'parameters' => $parameters,
-                ]);
-            }
-
-            if (self::$config->logRequest === false && self::$config->logResponse === true) {
-
-                self::$log->response($response);
-            }
-
-            if (self::$config->logRequest === true && self::$config->logResponse === true) {
-
-                self::$log->requestAndResponse([
-                    'method' => $method,
-                    'parameters' => $parameters,
-                ], $response);
-            }
+                ],
+                $response
+            );
         }
 
         if (self::$config->convertToObject) {
