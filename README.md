@@ -8,6 +8,11 @@ Telegram Bot PHP is a PHP Library for interaction with [Telegram Bot API](https:
 - [Security](#security)
 - [Config](#config)
     - [Configs](#configs)
+    - [Logging](#logging)
+        - [onLog](#onlog)
+        - [onLogUpdate](#onlogupdate)
+        - [onLogRequestAndResponse](#onlogrequestandresponse)
+        - [onLogError](#onlogerror)
     - [Main Config](#main-config)
     - [Use Config](#use-config)
     - [Set Config](#set-config)
@@ -198,100 +203,77 @@ If you do not want the program to continue after the error and stop, set this va
  */
 public bool $throwOnError = true;
 ```
-#### Log
+### Logging
 
-This library can log all their requests and Responses
+This library can log all their update , requests , responses and errors
 
-No special structure is required to use the database, All you have to do is connect to the database and enter the name of the table and the column in which the log should be placed.
+Just set the function for the desired log
 
-**Note The column should be textual and have enough space**
+**You can change any of the functions anywhere in the app**
 
-**Note that the log is saved as Jason**
+Get the information and you can use any method you want to record it
 
-**Note If you are using a file, you do not need to change the database configuration**
+#### onLog
 
-You can use any database that PDO supports in this section. You can also use the file and in this case you need to enter the path of the folder where the file is located in this section.
+For updates , requests , responses and errors
 
-**Note: Enter only the folder where the file is located, You should not enter the file name in this field**
-
-**To use the database, you must enter the pdo [connection configuration](https://www.php.net/manual/en/pdo.connections.php)**
-
+At the end, the program is called and sends update and a list of all requests and responses and errors as input
+##### Example
 ```php
-/**
- * Pdo database config or config files path,
- * If empty, they will be placed in the main project folder
- * 
- * @var \PDO|string
- */
-public $logDatabase = '';
+$config->onLog = function (array $log) {
+    
+    $log = json_encode($log);
+    file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
+};
+
+```
+#### onLogUpdate
+
+For update only
+
+When the update is received, the function is called
+
+##### Example
+```php
+$config->onLogUpdate = function (array $update) {
+    
+    $logUpdate = json_encode($update);
+    file_put_contents(__DIR__ . '/Bot_update.log', "{$logUpdate}\n", FILE_APPEND);
+};
+
 ```
 
-Log table name
+#### onLogRequestAndResponse
 
+For requests and responses only
 
+When a request is sent and the response code is 200
+
+##### Example
 ```php
-/**
- * log dafault database table name
- */
-public string $logDatabaseTableName = 'logs';
+$config->onLogRequestAndResponse = function (array $request, array $response) {
+    
+    $logRequestAndResponse = [$request, $response];
+    $logRequestAndResponse = json_encode($logRequestAndResponse);
+    file_put_contents(__DIR__ . '/Bot_request_response.log', "{$logRequestAndResponse}\n", FILE_APPEND);
+};
+
 ```
 
-The name of the column in which the report should be inserted
+#### onLogError
 
-**Note The column should be textual and have enough space**
+For errors only
 
+When a request is sent and the response code is not 200
+##### Example
 ```php
-/**
- * log dafault database column name
- */
-public string $logDatabaseColumnName = 'data';
+$config->onLogError = function (array $error) {
+    
+    $logError = json_encode($error);
+    file_put_contents(__DIR__ . '/Bot_error.log', "{$logError}\n", FILE_APPEND);
+};
+
 ```
-
-If you are using the file to save logs, Set this variable equal to the file name
-
-```php
-/**
- * log dafault file name
- */
-public string $logDatabaseDefaultFileName = 'bot.log';
-```
-
-If you want to log updates, set this variable to true
-
-```php
-/**
- * Log updates
- */
-public bool $logUpdate = true;
-```
-
-If you want to log requests, set this variable to true
-
-```php
-/**
- * Log requests
- */
-public bool $logRequest = true;
-```
-
-If you want to log response, set this variable to true
-
-```php
-/**
- * Log response
- */
-public bool $logResponse = true;
-```
-
-If you want to log errors, set this variable to true
-
-```php
-/**
- * Log errors
- */
-public bool $logError = true;
-```
-
 ### Main Config
 
 The main configuration is constant everywhere in the program And when a new configuration is created, the default value is the value set for the main configuration.
@@ -306,34 +288,34 @@ It should only be used statically
 
 ```php
 
-MainConfig::$logDatabase = new PDO('mysql:host=localhost;dbname=test', 'user', 'pass');
-// or file
-MainConfig::$logDatabase = '/example/test/';
-
-MainConfig::$logDatabaseTableName = 'logs';
-MainConfig::$logDatabaseColumnName = 'data';
-MainConfig::$logDatabaseDefaultFileName = 'bot.log';
-MainConfig::$logUpdate = true;
+MainConfig::$onLog = function (array $log) {
+    
+    $log = json_encode($log);
+    file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
+};
 
 // MainConfig::.... = ... ;
 ```
 ### Use Config
 
-Just create an object of class config and change its values
+Just create an object of config class and change the values
 
 **Note: The default configuration values are the [Main configuration](#main-config) values**
 
 ```php
 $config = new Config();
 
-$config->logDatabase = new PDO('mysql:host=localhost;dbname=test', 'user', 'pass');
-// or file
-$config->logDatabase = '/example/test/';
+$config->onLog = function (array $log) {
+    
+    $log = json_encode($log);
+    file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
+};
 
-$config->logDatabaseTableName = 'logs';
-$config->logDatabaseColumnName = 'data';
-$config->logDatabaseDefaultFileName = 'bot.log';
-$config->logUpdate = true;
+$config->onLogUpdate = function ($update) {
+    
+    $logUpdate = json_encode($update);
+    file_put_contents(__DIR__ . '/Bot_update.log', "{$logUpdate}\n", FILE_APPEND);
+};
 
 // $config-> ... = ... ;
 ```
@@ -345,10 +327,19 @@ To use the created configuration, it can be set to the second parameter of the b
 $bot = new Bot('__BOT_API_TOKEN__' , $config);
 ```
 
-It can also be edited later if needed
+It can also be changed later if needed
 
 ```php
-$bot->config->logUpdate = true;
+$config->throwOnError = true;
+// or
+$bot->config->throwOnError = true;
+
+$config->onLog = function (array $log) {
+    
+    $log = json_encode($log);
+    file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
+};
+
 // $bot->config->... = ...;
 ```
 ## Update
