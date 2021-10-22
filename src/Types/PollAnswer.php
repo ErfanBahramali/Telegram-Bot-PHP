@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * PollAnswer Class
- * 
+ *
  * This object represents an answer of a user in a non-anonymous poll.
  *
  * @link https://core.telegram.org/bots/api#pollanswer
@@ -21,7 +21,7 @@ class PollAnswer extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

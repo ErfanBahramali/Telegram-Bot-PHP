@@ -11,9 +11,9 @@ use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 use TelegramBotPHP\Types\MessageEntity;
 
-/** 
+/**
  * InlineQueryResultCachedVideo Class
- * 
+ *
  * Represents a link to a video file stored on the Telegram servers. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the video.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultcachedvideo
@@ -23,7 +23,7 @@ class InlineQueryResultCachedVideo extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -37,7 +37,7 @@ class InlineQueryResultCachedVideo extends InlineQueryResult
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

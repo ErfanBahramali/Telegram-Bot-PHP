@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
-/** 
+/**
  * PassportElementErrorUnspecified Class
- * 
+ *
  * Represents an issue in an unspecified place. The error is considered resolved when new data is added.
  *
  * @link https://core.telegram.org/bots/api#passportelementerrorunspecified
  */
 class PassportElementErrorUnspecified extends PassportElementError
 {
-    
+
 	/**
 	 * Error source, must be *unspecified*
 	 */

@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Document Class
- * 
+ *
  * This object represents a general file (as opposed to [photos](https://core.telegram.org/bots/api#photosize), [voice messages](https://core.telegram.org/bots/api#voice) and [audio files](https://core.telegram.org/bots/api#audio)).
  *
  * @link https://core.telegram.org/bots/api#document
@@ -21,7 +21,7 @@ class Document extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

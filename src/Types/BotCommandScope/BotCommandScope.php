@@ -9,11 +9,11 @@ namespace TelegramBotPHP\Types\BotCommandScope;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * BotCommandScope Class
- * 
+ *
  * This object represents the scope to which bot commands are applied. Currently, the following 7 scopes are supported:
- * 
+ *
     - [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault)
     - [BotCommandScopeAllPrivateChats](https://core.telegram.org/bots/api#botcommandscopeallprivatechats)
     - [BotCommandScopeAllGroupChats](https://core.telegram.org/bots/api#botcommandscopeallgroupchats)
@@ -21,7 +21,7 @@ use TelegramBotPHP\Type;
     - [BotCommandScopeChat](https://core.telegram.org/bots/api#botcommandscopechat)
     - [BotCommandScopeChatAdministrators](https://core.telegram.org/bots/api#botcommandscopechatadministrators)
     - [BotCommandScopeChatMember](https://core.telegram.org/bots/api#botcommandscopechatmember)
- * 
+ *
  * @link https://core.telegram.org/bots/api#botcommandscope
  */
 class BotCommandScope extends Type
@@ -30,7 +30,7 @@ class BotCommandScope extends Type
      * getCheckField function
      * name : field and Variable name to identify data type
      * datas : values: key(field data) =>  value(data class)
-     * 
+     *
      * @return array name and datas
      */
     private function getCheckField()

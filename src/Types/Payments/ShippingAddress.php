@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types\Payments;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * ShippingAddress Class
- * 
+ *
  * This object represents a shipping address.
  *
  * @link https://core.telegram.org/bots/api#shippingaddress
  */
 class ShippingAddress extends Type
 {
-    
+
 	/**
 	 * ISO 3166-1 alpha-2 country code
 	 */

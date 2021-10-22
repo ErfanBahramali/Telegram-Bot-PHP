@@ -11,9 +11,9 @@ use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 use TelegramBotPHP\Types\MessageEntity;
 
-/** 
+/**
  * InlineQueryResultMpeg4Gif Class
- * 
+ *
  * Represents a link to a video animation (H.264/MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the animation.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultmpeg4gif
@@ -23,7 +23,7 @@ class InlineQueryResultMpeg4Gif extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -37,7 +37,7 @@ class InlineQueryResultMpeg4Gif extends InlineQueryResult
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

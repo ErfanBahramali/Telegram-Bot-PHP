@@ -12,9 +12,9 @@ use TelegramBotPHP\Types\Animation;
 use TelegramBotPHP\Types\MessageEntity;
 use TelegramBotPHP\Types\PhotoSize;
 
-/** 
+/**
  * Game Class
- * 
+ *
  * This object represents a game. Use BotFather to create and edit games, their short names will act as unique identifiers.
  *
  * @link https://core.telegram.org/bots/api#game
@@ -24,7 +24,7 @@ class Game extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -37,7 +37,7 @@ class Game extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

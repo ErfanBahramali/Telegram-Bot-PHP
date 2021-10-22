@@ -11,9 +11,9 @@ use TelegramBotPHP\constants\UpdateType;
 
 trait CallbackQuery
 {
-    /** 
+    /**
      * getCallbackQueryData function
-     * 
+     *
      * @return string|null Data associated with the callback button. Be aware that a bad client can send arbitrary data in this field.
      */
     public static function getCallbackQueryData()

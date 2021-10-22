@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
-/** 
+/**
  * PassportElementErrorSelfie Class
- * 
+ *
  * Represents an issue with the selfie with a document. The error is considered resolved when the file with the selfie changes.
  *
  * @link https://core.telegram.org/bots/api#passportelementerrorselfie
  */
 class PassportElementErrorSelfie extends PassportElementError
 {
-    
+
 	/**
 	 * Error source, must be *selfie*
 	 */

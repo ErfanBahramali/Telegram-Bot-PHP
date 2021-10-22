@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * ReplyKeyboardMarkup Class
- * 
+ *
  * This object represents a [custom keyboard](https://core.telegram.org/bots#keyboards) with reply options (see [Introduction to bots](https://core.telegram.org/bots#keyboards) for details and examples).
  *
  * @link https://core.telegram.org/bots/api#replykeyboardmarkup
@@ -21,7 +21,7 @@ class ReplyKeyboardMarkup extends Type
 	/**
 	 * getTypeArrayVariables function
 	 * To specify the type of value of arrays Variables
-	 * 
+	 *
 	 * @return array
 	 */
 	protected function getTypeArrayVariables()

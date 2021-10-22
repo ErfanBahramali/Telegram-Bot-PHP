@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\ChatMember;
 
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * ChatMemberBanned Class
- * 
+ *
  * Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that was banned in the chat and can't return to the chat or view chat messages.
  *
  * @link https://core.telegram.org/bots/api#chatmemberbanned

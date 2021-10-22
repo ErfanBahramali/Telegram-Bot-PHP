@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\InlineMode\InlineQueryResult;
 use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 
-/** 
+/**
  * InlineQueryResultCachedSticker Class
- * 
+ *
  * Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the sticker.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultcachedsticker
@@ -22,7 +22,7 @@ class InlineQueryResultCachedSticker extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

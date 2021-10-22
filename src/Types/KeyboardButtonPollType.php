@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * KeyboardButtonPollType Class
- * 
+ *
  * This object represents type of a poll, which is allowed to be created and sent when the corresponding button is pressed.
  *
  * @link https://core.telegram.org/bots/api#keyboardbuttonpolltype

@@ -11,9 +11,9 @@ use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 use TelegramBotPHP\Types\MessageEntity;
 
-/** 
+/**
  * InlineQueryResultCachedVoice Class
- * 
+ *
  * Represents a link to a voice message stored on the Telegram servers. By default, this voice message will be sent by the user. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the voice message.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultcachedvoice
@@ -23,7 +23,7 @@ class InlineQueryResultCachedVoice extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -37,7 +37,7 @@ class InlineQueryResultCachedVoice extends InlineQueryResult
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

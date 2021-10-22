@@ -13,9 +13,9 @@ use TelegramBotPHP\Types\InlineMode\InlineQuery;
 use TelegramBotPHP\Types\Payments\PreCheckoutQuery;
 use TelegramBotPHP\Types\Payments\ShippingQuery;
 
-/** 
+/**
  * Update Class
- * 
+ *
  * This [object](https://core.telegram.org/bots/api#available-types) represents an incoming update.At most **one** of the optional parameters can be present in any given update.
  *
  * @link https://core.telegram.org/bots/api#update
@@ -25,7 +25,7 @@ class Update extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

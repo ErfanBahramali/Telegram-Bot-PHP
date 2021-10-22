@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Contact Class
- * 
+ *
  * This object represents a phone contact.
  *
  * @link https://core.telegram.org/bots/api#contact
  */
 class Contact extends Type
 {
-    
+
 	/**
 	 * Contact's phone number
 	 */

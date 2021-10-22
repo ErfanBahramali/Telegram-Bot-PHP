@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Chat Class
- * 
+ *
  * This object represents a chat.
  *
  * @link https://core.telegram.org/bots/api#chat
@@ -21,7 +21,7 @@ class Chat extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

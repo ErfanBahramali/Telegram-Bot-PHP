@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
-/** 
+/**
  * PassportElementErrorTranslationFile Class
- * 
+ *
  * Represents an issue with one of the files that constitute the translation of a document. The error is considered resolved when the file changes.
  *
  * @link https://core.telegram.org/bots/api#passportelementerrortranslationfile
  */
 class PassportElementErrorTranslationFile extends PassportElementError
 {
-    
+
 	/**
 	 * Error source, must be *translation_file*
 	 */

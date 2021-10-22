@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types\Stickers;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * MaskPosition Class
- * 
+ *
  * This object describes the position on faces where a mask should be placed by default.
  *
  * @link https://core.telegram.org/bots/api#maskposition
  */
 class MaskPosition extends Type
 {
-    
+
 	/**
 	 * The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”.
 	 */

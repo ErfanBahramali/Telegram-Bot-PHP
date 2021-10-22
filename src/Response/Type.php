@@ -22,16 +22,16 @@ use TelegramBotPHP\Types\User;
 use TelegramBotPHP\Types\UserProfilePhotos;
 use TelegramBotPHP\Types\WebhookInfo;
 
-/** 
+/**
  * Type Class
  */
 class Type
-{   
+{
     /**
      * keys = methods
      * values = response types on success
      * On success, the (value) is returned.
-     * 
+     *
      * If the value is an array and has only one value That is, the result is an array of object in the array
      */
     private static array $onSuccess = [

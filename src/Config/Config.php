@@ -9,32 +9,32 @@ namespace TelegramBotPHP\Config;
 
 class Config
 {
-    /** 
+    /**
      * bot api server url
      * @link https://core.telegram.org/bots/api#using-a-local-bot-api-server
      */
     public string $botApiServerUrl = 'https://api.telegram.org/bot';
 
-    /** 
+    /**
      * bot api server file url
      * @link https://core.telegram.org/bots/api#file
      */
     public string $botApiServerFileUrl = 'https://api.telegram.org/file/bot';
 
-    /** 
+    /**
      * auto convert update and response to class For easier access
      */
     public bool $convertToObject = true;
 
-    /** 
+    /**
      * Use webhook by default
      * if use getUpdates Set this variable to false
      */
     public bool $autoUseWebhook = true;
 
-    /** 
+    /**
      * In certain methods, some parameters are filled in automatically
-     * 
+     *
 For example, in `sendMessage` method,
 
 You can, not set "chat_id",
@@ -43,7 +43,7 @@ And the "chat_id" of the sender is considered automatic.
      */
     public bool $autofillParameters = true;
 
-    /** 
+    /**
      * Stop the program when it encounters an error
      */
     public bool $throwOnError = true;

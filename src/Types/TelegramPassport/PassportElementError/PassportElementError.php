@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * PassportElementError Class
- * 
+ *
  * This object represents an error in the Telegram Passport element which was submitted that should be resolved by the user. It should be one of:
  *
     - [PassportElementErrorDataField](https://core.telegram.org/bots/api#passportelementerrordatafield)
@@ -23,7 +23,7 @@ use TelegramBotPHP\Type;
     - [PassportElementErrorTranslationFile](https://core.telegram.org/bots/api#passportelementerrortranslationfile)
     - [PassportElementErrorTranslationFiles](https://core.telegram.org/bots/api#passportelementerrortranslationfiles)
     - [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)
- * 
+ *
  * @link https://core.telegram.org/bots/api#passportelementerror
  */
 class PassportElementError extends Type
@@ -32,7 +32,7 @@ class PassportElementError extends Type
      * getCheckField function
      * name : field and Variable name to identify data type
      * datas : values: key(field data) =>  value(data class)
-     * 
+     *
      * @return array name and datas
      */
     private function getCheckField()

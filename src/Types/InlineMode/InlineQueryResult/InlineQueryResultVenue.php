@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\InlineMode\InlineQueryResult;
 use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 
-/** 
+/**
  * InlineQueryResultVenue Class
- * 
+ *
  * Represents a venue. By default, the venue will be sent by the user. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the venue.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultvenue
@@ -22,7 +22,7 @@ class InlineQueryResultVenue extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\InlineMode\InlineQueryResult;
 use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 
-/** 
+/**
  * InlineQueryResultContact Class
- * 
+ *
  * Represents a contact with a phone number. By default, this contact will be sent by the user. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the contact.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultcontact
@@ -22,7 +22,7 @@ class InlineQueryResultContact extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

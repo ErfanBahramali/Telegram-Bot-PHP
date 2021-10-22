@@ -11,9 +11,9 @@ use TelegramBotPHP\constants\UpdateType;
 
 trait User
 {
-    /** 
+    /**
      * getUserId function
-     * 
+     *
      * @return int|null Unique identifier for this user or bot. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier.
 
      */
@@ -40,9 +40,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * userIsBot function
-     * 
+     *
      * @return bool|null True, if this user is a bot
      */
     public static function userIsBot()
@@ -68,9 +68,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * getFirstName function
-     * 
+     *
      * @return string|null User's or bot's first name
      */
     public static function getUserFirstName()
@@ -96,9 +96,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * getLastName function
-     * 
+     *
      * @return string|null User's or bot's last name
      */
     public static function getUserLastName()
@@ -124,9 +124,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * getUserUsername function
-     * 
+     *
      * @return string|null User's or bot's username
      */
     public static function getUserUsername()
@@ -152,10 +152,10 @@ trait User
         }
     }
 
-    /** 
+    /**
      * getUserLanguageCode function
-     * 
-     * @return string|null [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language 
+     *
+     * @return string|null [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language
      */
     public static function getUserLanguageCode()
     {
@@ -180,9 +180,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * userCanJoinGroups function
-     * 
+     *
      * @return bool|null True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
      */
     public static function userCanJoinGroups()
@@ -208,9 +208,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * userCanReadAllGroupMessages function
-     * 
+     *
      * @return bool|null True, if [privacy mode](https://core.telegram.org/bots#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
      */
     public static function userCanReadAllGroupMessages()
@@ -236,9 +236,9 @@ trait User
         }
     }
 
-    /** 
+    /**
      * userSupportsInlineQueries function
-     * 
+     *
      * @return bool|null True, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
      */
     public static function userSupportsInlineQueries()

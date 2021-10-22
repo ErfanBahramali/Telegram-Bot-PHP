@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Audio Class
- * 
+ *
  * This object represents an audio file to be treated as music by the Telegram clients.
  *
  * @link https://core.telegram.org/bots/api#audio
@@ -21,7 +21,7 @@ class Audio extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

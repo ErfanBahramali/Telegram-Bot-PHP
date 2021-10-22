@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\Payments;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * SuccessfulPayment Class
- * 
+ *
  * This object contains basic information about a successful payment.
  *
  * @link https://core.telegram.org/bots/api#successfulpayment
@@ -21,7 +21,7 @@ class SuccessfulPayment extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

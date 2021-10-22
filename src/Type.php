@@ -10,9 +10,9 @@ namespace TelegramBotPHP;
 use TelegramBotPHP\Exceptions\BotException;
 use TelegramBotPHP\Format;
 
-/** 
+/**
  * User Class
- * 
+ *
  * All types used in the Bot API responses are represented as JSON-objects.
  * It is safe to use 32-bit signed integers for storing all Integer fields unless otherwise noted.
  * [Optional]. fields may be not returned when irrelevant.
@@ -36,7 +36,7 @@ class Type
     //  * getCheckField function
     //  * name : field and Variable name to identify data type
     //  * datas : values: key(field data) =>  value(data class)
-    //  * 
+    //  *
     //  * @return array name and datas
     //  */
     // private function getCheckField()
@@ -50,7 +50,7 @@ class Type
     // /**
     //  * getTypeVariables function
     //  * To specify the type of value of Variables
-    //  * 
+    //  *
     //  * @return array
     //  */
     // protected function getTypeVariables()
@@ -61,7 +61,7 @@ class Type
     // /**
     //  * getTypeArrayVariables function
     //  * To specify the type of value of arrays Variables
-    //  * 
+    //  *
     //  * @return array
     //  */
     // protected function getTypeArrayVariables()
@@ -167,9 +167,9 @@ class Type
         return true;
     }
 
-    /** 
+    /**
      * __get function
-     * 
+     *
      * @param string $name
      * @return mixed
      */

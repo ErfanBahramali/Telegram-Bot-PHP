@@ -11,9 +11,9 @@ use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\Location;
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * InlineQuery Class
- * 
+ *
  * This object represents an incoming inline query. When the user sends an empty query, your bot could return some default or trending results.
  *
  * @link https://core.telegram.org/bots/api#inlinequery
@@ -23,7 +23,7 @@ class InlineQuery extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

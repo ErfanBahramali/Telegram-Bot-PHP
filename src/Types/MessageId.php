@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * MessageId Class
- * 
+ *
  * This object represents a unique message identifier.
  *
  * @link https://core.telegram.org/bots/api#messageid
  */
 class MessageId extends Type
 {
-    
+
 	/**
 	 * Unique message identifier
 	 */

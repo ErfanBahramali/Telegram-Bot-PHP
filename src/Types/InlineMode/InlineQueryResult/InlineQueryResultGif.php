@@ -11,9 +11,9 @@ use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 use TelegramBotPHP\Types\MessageEntity;
 
-/** 
+/**
  * InlineQueryResultGif Class
- * 
+ *
  * Represents a link to an animated GIF file. By default, this animated GIF file will be sent by the user with optional caption. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the animation.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultgif
@@ -23,7 +23,7 @@ class InlineQueryResultGif extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -37,7 +37,7 @@ class InlineQueryResultGif extends InlineQueryResult
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

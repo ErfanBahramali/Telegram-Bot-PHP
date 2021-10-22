@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types\Payments;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Invoice Class
- * 
+ *
  * This object contains basic information about an invoice.
  *
  * @link https://core.telegram.org/bots/api#invoice
  */
 class Invoice extends Type
 {
-    
+
 	/**
 	 * Product name
 	 */

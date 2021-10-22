@@ -9,7 +9,7 @@ namespace TelegramBotPHP\Log;
 
 use TelegramBotPHP\Config\Config;
 
-/** 
+/**
  * class Log
  */
 class Log
@@ -28,7 +28,7 @@ class Log
 
     /**
      * __construct function
-     * 
+     *
      * @param Config $config
      * @return void
      */
@@ -39,9 +39,9 @@ class Log
         $this->data['time']['start'] = time();
     }
 
-    /** 
+    /**
      * update function
-     * 
+     *
      * @param array $update
      * @return void
      */
@@ -60,9 +60,9 @@ class Log
         }
     }
 
-    /** 
+    /**
      * requestAndResponse function
-     * 
+     *
      * @param array $request
      * @param array $response
      * @return void
@@ -85,9 +85,9 @@ class Log
         }
     }
 
-    /** 
+    /**
      * error function
-     * 
+     *
      * @param array $error
      * @return void
      */
@@ -106,9 +106,9 @@ class Log
         }
     }
 
-    /** 
+    /**
      * __destruct function
-     * 
+     *
      * @return mixed
      */
     public function __destruct()

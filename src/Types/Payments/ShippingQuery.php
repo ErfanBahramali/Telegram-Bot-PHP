@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\Payments;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * ShippingQuery Class
- * 
+ *
  * This object contains information about an incoming shipping query.
  *
  * @link https://core.telegram.org/bots/api#shippingquery
@@ -22,7 +22,7 @@ class ShippingQuery extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

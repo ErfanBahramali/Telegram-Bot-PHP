@@ -11,9 +11,9 @@ use TelegramBotPHP\constants\UpdateType;
 
 trait Chat
 {
-    /** 
+    /**
      * getChatId function
-     * 
+     *
      * @return int|null Unique identifier for this chat. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier.
      */
     public static function getChatId()
@@ -36,9 +36,9 @@ trait Chat
         }
     }
 
-    /** 
+    /**
      * getChatType function
-     * 
+     *
      * @return string|null Type of chat, can be either “private”, “group”, “supergroup” or “channel”
      */
     public static function getChatType()
@@ -61,9 +61,9 @@ trait Chat
         }
     }
 
-    /** 
+    /**
      * getChatTitle function
-     * 
+     *
      * @return string|null Title, for supergroups, channels and group chats
      */
     public static function getChatTitle()
@@ -86,9 +86,9 @@ trait Chat
         }
     }
 
-    /** 
+    /**
      * getChatUsername function
-     * 
+     *
      * @return string|null Username, for private chats, supergroups and channels if available
      */
     public static function getChatUsername()
@@ -111,9 +111,9 @@ trait Chat
         }
     }
 
-    /** 
+    /**
      * getChatFirstName function
-     * 
+     *
      * @return string|null First name of the other party in a private chat
      */
     public static function getChatFirstName()
@@ -136,9 +136,9 @@ trait Chat
         }
     }
 
-    /** 
+    /**
      * getChatLastName function
-     * 
+     *
      * @return string|null Last name of the other party in a private chat
      */
     public static function getChatLastName()

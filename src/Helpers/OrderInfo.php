@@ -11,9 +11,9 @@ use TelegramBotPHP\constants\UpdateType;
 
 trait OrderInfo
 {
-    /** 
+    /**
      * getOrderInfoName function
-     * 
+     *
      * @return string|null User name
      */
     public static function getOrderInfoName()
@@ -28,9 +28,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoPhoneNumber function
-     * 
+     *
      * @return string|null User's phone number
      */
     public static function getOrderInfoPhoneNumber()
@@ -45,9 +45,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoEmail function
-     * 
+     *
      * @return string|null User email
      */
     public static function getOrderInfoEmail()
@@ -62,9 +62,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoShippingAddressCountryCode function
-     * 
+     *
      * @return string|null ISO 3166-1 alpha-2 country code
      */
     public static function getOrderInfoShippingAddressCountryCode()
@@ -79,9 +79,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoShippingAddressState function
-     * 
+     *
      * @return string|null State, if applicable
      */
     public static function getOrderInfoShippingAddressState()
@@ -96,9 +96,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoShippingAddressStreetLine1 function
-     * 
+     *
      * @return string|null First line for the address
      */
     public static function getOrderInfoShippingAddressStreetLine1()
@@ -113,9 +113,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoShippingAddressStreetLine2 function
-     * 
+     *
      * @return string|null Second line for the address
      */
     public static function getOrderInfoShippingAddressStreetLine2()
@@ -130,9 +130,9 @@ trait OrderInfo
         }
     }
 
-    /** 
+    /**
      * getOrderInfoShippingAddressPostCode function
-     * 
+     *
      * @return string|null Address post code
      */
     public static function getOrderInfoShippingAddressPostCode()

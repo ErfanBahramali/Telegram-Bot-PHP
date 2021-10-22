@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Venue Class
- * 
+ *
  * This object represents a venue.
  *
  * @link https://core.telegram.org/bots/api#venue
@@ -21,7 +21,7 @@ class Venue extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

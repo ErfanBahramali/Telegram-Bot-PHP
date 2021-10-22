@@ -30,11 +30,11 @@ class Bot
 
     private static Helper $helper;
 
-    /** 
+    /**
      * __construct function
-     * 
+     *
      * set token and update
-     * 
+     *
      * @param string $token bot api key
      * @return object|void Update
      */
@@ -52,11 +52,11 @@ class Bot
         }
     }
 
-    /** 
+    /**
      * setUpdate function
-     * 
+     *
      * set update
-     * 
+     *
      * @param string $input
      * @return object|void $update
      */
@@ -82,9 +82,9 @@ class Bot
         }
     }
 
-    /** 
+    /**
      * getInput function
-     * 
+     *
      * @return array|null
      */
     public static function getInput()
@@ -92,9 +92,9 @@ class Bot
         return self::$input ?? null;
     }
 
-    /** 
+    /**
      * getUpdate function
-     * 
+     *
      * @return Update|null
      */
     public static function getUpdate()
@@ -102,9 +102,9 @@ class Bot
         return self::$update ?? null;
     }
 
-    /** 
+    /**
      * getHelper function
-     * 
+     *
      * @return Helper|null
      */
     public static function getHelper()
@@ -112,9 +112,9 @@ class Bot
         return self::$helper ?? null;
     }
 
-    /** 
+    /**
      * sendRequest function
-     * 
+     *
      * @param string $method
      * @param array $data
      * @return Response|array telegram response
@@ -177,7 +177,7 @@ class Bot
 
     /**
      * downloadFile function
-     * 
+     *
      * @param string $fileId
      * @param string $localFilePath
      * @return bool true if file downloaded
@@ -210,7 +210,7 @@ class Bot
 
     /**
      * downloadFileByFileId function
-     * 
+     *
      * @param string $fileId
      * @param string $localFilePath
      * @return bool|Response true if file downloaded
@@ -234,8 +234,8 @@ class Bot
 
     /**
      * isTelegramIp function
-     * Check if a given ip is in a telegram ip range 
-     * 
+     * Check if a given ip is in a telegram ip range
+     *
      * @param  string $ip IP to check in IPV4 format eg. 127.0.0.1
      * @return boolean true if the ip is in telegram ip range / false if not.
      */

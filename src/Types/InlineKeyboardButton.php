@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\Games\CallbackGame;
 
-/** 
+/**
  * InlineKeyboardButton Class
- * 
+ *
  * This object represents one button of an inline keyboard. You **must** use exactly one of the optional fields.
  *
  * @link https://core.telegram.org/bots/api#inlinekeyboardbutton
@@ -22,7 +22,7 @@ class InlineKeyboardButton extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

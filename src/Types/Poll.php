@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Poll Class
- * 
+ *
  * This object contains information about a poll.
  *
  * @link https://core.telegram.org/bots/api#poll
@@ -21,7 +21,7 @@ class Poll extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

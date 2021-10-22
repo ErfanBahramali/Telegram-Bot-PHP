@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
-/** 
+/**
  * PassportElementErrorDataField Class
- * 
+ *
  * Represents an issue in one of the data fields that was provided by the user. The error is considered resolved when the field's value changes.
  *
  * @link https://core.telegram.org/bots/api#passportelementerrordatafield
  */
 class PassportElementErrorDataField extends PassportElementError
 {
-    
+
 	/**
 	 * Error source, must be *data*
 	 */

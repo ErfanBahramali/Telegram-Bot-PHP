@@ -11,9 +11,9 @@ use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\Location;
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * ChosenInlineResult Class
- * 
+ *
  * Represents a [result](https://core.telegram.org/bots/api#inlinequeryresult) of an inline query that was chosen by the user and sent to their chat partner.
  *
  * @link https://core.telegram.org/bots/api#choseninlineresult
@@ -23,7 +23,7 @@ class ChosenInlineResult extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

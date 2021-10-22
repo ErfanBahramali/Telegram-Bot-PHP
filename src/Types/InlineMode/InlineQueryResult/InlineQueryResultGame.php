@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\InlineMode\InlineQueryResult;
 
 use TelegramBotPHP\Types\InlineKeyboardMarkup;
 
-/** 
+/**
  * InlineQueryResultGame Class
- * 
+ *
  * Represents a [Game](https://core.telegram.org/bots/api#games).
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultgame
@@ -21,7 +21,7 @@ class InlineQueryResultGame extends InlineQueryResult
 	/**
 	 * getTypeVariables function
 	 * To specify the type of value of Variables
-	 * 
+	 *
 	 * @return array
 	 */
 	protected function getTypeVariables()

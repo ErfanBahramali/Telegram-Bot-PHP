@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\ChatMember;
 
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * ChatMemberLeft Class
- * 
+ *
  * Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that isn't currently a member of the chat, but may join it themselves.
  *
  * @link https://core.telegram.org/bots/api#chatmemberleft

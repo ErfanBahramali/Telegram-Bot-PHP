@@ -7,7 +7,7 @@
 
 namespace TelegramBotPHP\constants;
 
-/** 
+/**
  * @link https://core.telegram.org/bots/api#update
  */
 class UpdateType

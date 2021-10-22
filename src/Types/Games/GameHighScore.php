@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\Games;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * GameHighScore Class
- * 
+ *
  * This object represents one row of the high scores table for a game.
  *
  * @link https://core.telegram.org/bots/api#gamehighscore
@@ -22,7 +22,7 @@ class GameHighScore extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -31,7 +31,7 @@ class GameHighScore extends Type
             'user' => User::class,
         ];
     }
-	
+
 	/**
 	 * Position in high score table for the game
 	 */

@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Voice Class
- * 
+ *
  * This object represents a voice note.
  *
  * @link https://core.telegram.org/bots/api#voice
  */
 class Voice extends Type
 {
-    
+
 	/**
 	 * Identifier for this file, which can be used to download or reuse the file
 	 */

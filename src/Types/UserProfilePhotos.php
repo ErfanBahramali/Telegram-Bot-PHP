@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * UserProfilePhotos Class
- * 
+ *
  * This object represent a user's profile pictures.
  *
  * @link https://core.telegram.org/bots/api#userprofilephotos
@@ -21,7 +21,7 @@ class UserProfilePhotos extends Type
 	/**
 	 * getTypeArrayVariables function
 	 * To specify the type of value of arrays Variables
-	 * 
+	 *
 	 * @return array
 	 */
 	protected function getTypeArrayVariables()

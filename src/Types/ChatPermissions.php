@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * ChatPermissions Class
- * 
+ *
  * Describes actions that a non-administrator user is allowed to take in a chat.
  *
  * @link https://core.telegram.org/bots/api#chatpermissions
  */
 class ChatPermissions extends Type
 {
-    
+
 	/**
 	 * [optional] True, if the user is allowed to send text messages, contacts, locations and venues
 	 */

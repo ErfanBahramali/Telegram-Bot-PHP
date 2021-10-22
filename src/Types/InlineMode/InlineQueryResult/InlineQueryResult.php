@@ -10,11 +10,11 @@ namespace TelegramBotPHP\Types\InlineMode\InlineQueryResult;
 use TelegramBotPHP\Exceptions\BotException;
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * InlineQueryResult Class
- * 
+ *
  * This object represents one result of an inline query. Telegram clients currently support results of the following 20 types:
- * 
+ *
     - [InlineQueryResultCachedAudio](https://core.telegram.org/bots/api#inlinequeryresultcachedaudio)
     - [InlineQueryResultCachedDocument](https://core.telegram.org/bots/api#inlinequeryresultcacheddocument)
     - [InlineQueryResultCachedGif](https://core.telegram.org/bots/api#inlinequeryresultcachedgif)
@@ -35,9 +35,9 @@ use TelegramBotPHP\Type;
     - [InlineQueryResultVenue](https://core.telegram.org/bots/api#inlinequeryresultvenue)
     - [InlineQueryResultVideo](https://core.telegram.org/bots/api#inlinequeryresultvideo)
     - [InlineQueryResultVoice](https://core.telegram.org/bots/api#inlinequeryresultvoice)
- * 
+ *
  * Note: All URLs passed in inline query results will be available to end users and therefore must be assumed to be public.
- * 
+ *
  * @link https://core.telegram.org/bots/api#inlinequeryresult
  */
 class InlineQueryResult extends Type
@@ -50,7 +50,7 @@ class InlineQueryResult extends Type
      */
     private function checkClassType(array $data)
     {
-        /** 
+        /**
          * for cached
          */
         $checkCachedFieldDatas = [
@@ -72,13 +72,13 @@ class InlineQueryResult extends Type
             }
         }
 
-        /** 
+        /**
          * field and Variable name to identify data type
          */
         $checkField = 'type';
 
-        /** 
-         * values: 
+        /**
+         * values:
          *          key(field data) =>  value(data class)
          */
         $checkFieldDatas = [

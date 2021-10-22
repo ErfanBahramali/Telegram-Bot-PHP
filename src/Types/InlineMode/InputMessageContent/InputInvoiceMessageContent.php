@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\InlineMode\InputMessageContent;
 
 use TelegramBotPHP\Types\Payments\LabeledPrice;
 
-/** 
+/**
  * InputInvoiceMessageContent Class
- * 
+ *
  * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of an invoice message to be sent as the result of an inline query.
  *
  * @link https://core.telegram.org/bots/api#inputinvoicemessagecontent
@@ -21,7 +21,7 @@ class InputInvoiceMessageContent extends InputMessageContent
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

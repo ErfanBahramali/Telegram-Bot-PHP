@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\InlineMode\InputMessageContent;
 
-/** 
+/**
  * InputVenueMessageContent Class
- * 
+ *
  * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a venue message to be sent as the result of an inline query.
  *
  * @link https://core.telegram.org/bots/api#inputvenuemessagecontent
  */
 class InputVenueMessageContent extends InputMessageContent
 {
-    
+
 	/**
 	 * Latitude of the venue in degrees
 	 */

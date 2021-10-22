@@ -14,9 +14,9 @@ use TelegramBotPHP\Types\Payments\SuccessfulPayment;
 use TelegramBotPHP\Types\Stickers\Sticker;
 use TelegramBotPHP\Types\TelegramPassport\PassportData;
 
-/** 
+/**
  * Message Class
- * 
+ *
  * This object represents a message.
  *
  * @link https://core.telegram.org/bots/api#message
@@ -26,7 +26,7 @@ class Message extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -70,7 +70,7 @@ class Message extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Dice Class
- * 
+ *
  * This object represents an animated emoji that displays a random value.
  *
  * @link https://core.telegram.org/bots/api#dice
  */
 class Dice extends Type
 {
-    
+
 	/**
 	 * Emoji on which the dice throw animation is based
 	 */

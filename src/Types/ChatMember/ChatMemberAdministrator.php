@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\ChatMember;
 
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * ChatMemberAdministrator Class
- * 
+ *
  * Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that has some additional privileges.
  *
  * @link https://core.telegram.org/bots/api#chatmemberadministrator

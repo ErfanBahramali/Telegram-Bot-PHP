@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * ChatInviteLink Class
- * 
+ *
  * Represents an invite link for a chat.
  *
  * @link https://core.telegram.org/bots/api#chatinvitelink
@@ -21,7 +21,7 @@ class ChatInviteLink extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

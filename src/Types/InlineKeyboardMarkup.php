@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * InlineKeyboardMarkup Class
- * 
+ *
  * This object represents an [inline keyboard](https://core.telegram.org/bots#inline-keyboards-and-on-the-fly-updating) that appears right next to the message it belongs to.
  *
  * @link https://core.telegram.org/bots/api#inlinekeyboardmarkup
@@ -21,7 +21,7 @@ class InlineKeyboardMarkup extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

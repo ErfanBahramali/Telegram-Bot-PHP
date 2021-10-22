@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\Stickers;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\PhotoSize;
 
-/** 
+/**
  * StickerSet Class
- * 
+ *
  * This object represents a sticker set.
  *
  * @link https://core.telegram.org/bots/api#stickerset
@@ -22,7 +22,7 @@ class StickerSet extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -35,7 +35,7 @@ class StickerSet extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

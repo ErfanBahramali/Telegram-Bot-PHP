@@ -7,9 +7,9 @@
 
 namespace TelegramBotPHP\Types\InputMedia;
 
-/** 
+/**
  * InputMediaPhoto Class
- * 
+ *
  * Represents a photo to be sent.
  *
  * @link https://core.telegram.org/bots/api#inputmediaphoto

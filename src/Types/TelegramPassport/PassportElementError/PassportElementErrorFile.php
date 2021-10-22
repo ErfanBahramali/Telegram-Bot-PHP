@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
-/** 
+/**
  * PassportElementErrorFile Class
- * 
+ *
  * Represents an issue with a document scan. The error is considered resolved when the file with the document scan changes.
  *
  * @link https://core.telegram.org/bots/api#passportelementerrorfile
  */
 class PassportElementErrorFile extends PassportElementError
 {
-    
+
 	/**
 	 * Error source, must be *file*
 	 */

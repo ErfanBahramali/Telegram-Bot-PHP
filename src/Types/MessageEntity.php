@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * MessageEntity Class
- * 
+ *
  * This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.
  *
  * @link https://core.telegram.org/bots/api#messageentity
@@ -21,7 +21,7 @@ class MessageEntity extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

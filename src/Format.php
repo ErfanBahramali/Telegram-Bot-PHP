@@ -12,15 +12,15 @@ use TelegramBotPHP\Helpers\Helper;
 
 class Format
 {
-    /** 
+    /**
      * mention function
-     * 
+     *
      * mention user by user id
-     * 
+     *
      * @link https://core.telegram.org/bots/api#formatting-options
      * @param int $userId [optional] by default is Message sender ID (update->message->from_id->id)
      * @param string $text [optional] by default is Message sender first name + last name (update->message->from_id->first_name + update->message->from_id->last_name)
-     * @param string $parseMode [optional] by default is markdown 
+     * @param string $parseMode [optional] by default is markdown
      * @return string
      */
     public static function mention(int $userId = null, string $text = null, string $parseMode = ParseMode::MARKDOWN): string
@@ -54,11 +54,11 @@ class Format
         return $url;
     }
 
-    /** 
+    /**
      * markdownV2 function
-     * 
+     *
      * escape MarkdownV2 style
-     * 
+     *
      * @link https://core.telegram.org/bots/api#markdownv2-style
      * @param string $string
      * @return string
@@ -89,12 +89,12 @@ class Format
         ]);
     }
 
-    /** 
+    /**
      * html function
-     * 
+     *
      * escape HTML style
      * don't use `htmlentities` or `htmlspecialchars` function.
-     * 
+     *
      * @link https://core.telegram.org/bots/api#html-style
      * @param string $string
      * @return string
@@ -108,11 +108,11 @@ class Format
         ]);
     }
 
-    /** 
+    /**
      * markdown function
-     * 
+     *
      * escape Markdown style
-     * 
+     *
      * @link https://core.telegram.org/bots/api#markdown-style
      * @param string $string
      * @return string
@@ -128,11 +128,11 @@ class Format
         ]);
     }
 
-    /** 
+    /**
      * replaceKeyToValue function
-     * 
+     *
      * replace array keys to array values
-     * 
+     *
      * @param string $string
      * @param array $string
      * @return string
@@ -146,11 +146,11 @@ class Format
         );
     }
 
-    /** 
+    /**
      * toCamelCase function
-     * 
+     *
      * convert text to camelCase (test_text => testText)
-     * 
+     *
      * @param string $text
      * @return string
      */

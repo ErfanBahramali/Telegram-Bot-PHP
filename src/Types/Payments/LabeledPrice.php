@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types\Payments;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * LabeledPrice Class
- * 
+ *
  * This object represents a portion of the price for goods or services.
  *
  * @link https://core.telegram.org/bots/api#labeledprice
  */
 class LabeledPrice extends Type
 {
-    
+
 	/**
 	 * Portion label
 	 */

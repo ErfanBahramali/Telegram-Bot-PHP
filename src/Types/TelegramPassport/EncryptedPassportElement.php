@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\TelegramPassport;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * EncryptedPassportElement Class
- * 
+ *
  * Contains information about documents or other Telegram Passport elements shared with the bot by the user.
  *
  * @link https://core.telegram.org/bots/api#encryptedpassportelement
@@ -21,7 +21,7 @@ class EncryptedPassportElement extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -36,7 +36,7 @@ class EncryptedPassportElement extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

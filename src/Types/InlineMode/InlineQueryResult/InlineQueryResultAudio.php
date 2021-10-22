@@ -11,9 +11,9 @@ use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 use TelegramBotPHP\Types\MessageEntity;
 
-/** 
+/**
  * InlineQueryResultAudio Class
- * 
+ *
  * Represents a link to an MP3 audio file. By default, this audio file will be sent by the user. Alternatively, you can use *input_message_content* to send a message with the specified content instead of the audio.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultaudio
@@ -23,7 +23,7 @@ class InlineQueryResultAudio extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()
@@ -37,7 +37,7 @@ class InlineQueryResultAudio extends InlineQueryResult
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

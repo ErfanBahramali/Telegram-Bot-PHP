@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\Payments;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * ShippingOption Class
- * 
+ *
  * This object represents one shipping option.
  *
  * @link https://core.telegram.org/bots/api#shippingoption
@@ -21,7 +21,7 @@ class ShippingOption extends Type
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

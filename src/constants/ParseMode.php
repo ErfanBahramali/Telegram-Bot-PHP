@@ -7,7 +7,7 @@
 
 namespace TelegramBotPHP\constants;
 
-/** 
+/**
  * Mode for parsing entities in the message text. See formatting options for more details.
  * The Bot API supports basic formatting for messages. You can use bold, italic, underlined and strikethrough text, as well as inline links and pre-formatted code in your bots' messages. Telegram clients will render them accordingly. You can use either markdown-style or HTML-style formatting.
 
@@ -32,7 +32,7 @@ class ParseMode
 
     /**
      * MARKDOWN Parse mode
-     * This is a legacy mode, retained for backward compatibility. To use this mode, pass Markdown in the parse_mode field. 
+     * This is a legacy mode, retained for backward compatibility. To use this mode, pass Markdown in the parse_mode field.
      * @link https://core.telegram.org/bots/api#markdown-style
      */
     public const MARKDOWN = 'MARKDOWN';

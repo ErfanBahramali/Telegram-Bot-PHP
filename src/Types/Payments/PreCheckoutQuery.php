@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\Payments;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\User;
 
-/** 
+/**
  * PreCheckoutQuery Class
- * 
+ *
  * This object contains information about an incoming pre-checkout query.
  *
  * @link https://core.telegram.org/bots/api#precheckoutquery
@@ -22,7 +22,7 @@ class PreCheckoutQuery extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

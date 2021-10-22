@@ -11,9 +11,9 @@ use TelegramBotPHP\constants\UpdateType;
 
 trait Message
 {
-    /** 
+    /**
      * getMessageId function
-     * 
+     *
      * @return int|null
      */
     public static function getMessageId()
@@ -35,9 +35,9 @@ trait Message
         }
     }
 
-    /** 
+    /**
      * getMessageText function
-     * 
+     *
      * @return string|null For text messages, the actual UTF-8 text of the message, 0-4096 characters
      */
     public static function getMessageText()
@@ -59,9 +59,9 @@ trait Message
         }
     }
 
-    /** 
+    /**
      * getMessageEditDate function
-     * 
+     *
      * @return int|null Date the message was last edited in Unix time
      */
     public static function getMessageEditDate()
@@ -77,9 +77,9 @@ trait Message
         }
     }
 
-    /** 
+    /**
      * getMessageCaption function
-     * 
+     *
      * @return string|null Caption for the animation, audio, document, photo, video or voice, 0-1024 characters
      */
     public static function getMessageCaption()

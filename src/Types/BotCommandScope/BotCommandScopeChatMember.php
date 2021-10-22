@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\BotCommandScope;
 
-/** 
+/**
  * BotCommandScopeChatMember Class
- * 
+ *
  * Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering a specific member of a group or supergroup chat.
  *
  * @link https://core.telegram.org/bots/api#botcommandscopechatmember
  */
 class BotCommandScopeChatMember extends BotCommandScope
 {
-    
+
 	/**
 	 * Scope type, must be *chat_member*
 	 */
@@ -24,7 +24,7 @@ class BotCommandScopeChatMember extends BotCommandScope
 
 	/**
 	 * Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
-	 * 
+	 *
 	 * @var string|int
 	 */
 	public $chatId;

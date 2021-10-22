@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\InlineMode\InputMessageContent;
 
 use TelegramBotPHP\Types\MessageEntity;
 
-/** 
+/**
  * InputTextMessageContent Class
- * 
+ *
  * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a text message to be sent as the result of an inline query.
  *
  * @link https://core.telegram.org/bots/api#inputtextmessagecontent
@@ -21,7 +21,7 @@ class InputTextMessageContent extends InputMessageContent
     /**
      * getTypeArrayVariables function
      * To specify the type of value of arrays Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeArrayVariables()

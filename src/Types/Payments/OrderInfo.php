@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types\Payments;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * OrderInfo Class
- * 
+ *
  * This object represents information about an order.
  *
  * @link https://core.telegram.org/bots/api#orderinfo
@@ -21,7 +21,7 @@ class OrderInfo extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

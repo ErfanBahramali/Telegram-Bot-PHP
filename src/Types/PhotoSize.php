@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * PhotoSize Class
- * 
+ *
  * This object represents one size of a photo or a [file](https://core.telegram.org/bots/api#document) / [sticker](https://core.telegram.org/bots/api#sticker) thumbnail.
  *
  * @link https://core.telegram.org/bots/api#photosize
  */
 class PhotoSize extends Type
 {
-    
+
 	/**
 	 * Identifier for this file, which can be used to download or reuse the file
 	 */

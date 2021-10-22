@@ -10,9 +10,9 @@ namespace TelegramBotPHP\Types\InlineMode\InlineQueryResult;
 use TelegramBotPHP\Types\InlineKeyboardMarkup;
 use TelegramBotPHP\Types\InlineMode\InputMessageContent\InputMessageContent;
 
-/** 
+/**
  * InlineQueryResultArticle Class
- * 
+ *
  * Represents a link to an article or web page.
  *
  * @link https://core.telegram.org/bots/api#inlinequeryresultarticle
@@ -22,7 +22,7 @@ class InlineQueryResultArticle extends InlineQueryResult
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

@@ -7,16 +7,16 @@
 
 namespace TelegramBotPHP\Types\InlineMode\InputMessageContent;
 
-/** 
+/**
  * InputContactMessageContent Class
- * 
+ *
  * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a contact message to be sent as the result of an inline query.
  *
  * @link https://core.telegram.org/bots/api#inputcontactmessagecontent
  */
 class InputContactMessageContent extends InputMessageContent
 {
-    
+
 	/**
 	 * Contact's phone number
 	 */

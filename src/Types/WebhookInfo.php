@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * WebhookInfo Class
- * 
+ *
  * Contains information about the current status of a webhook.
  *
  * @link https://core.telegram.org/bots/api#webhookinfo
  */
 class WebhookInfo extends Type
 {
-    
+
 	/**
 	 * Webhook URL, may be empty if webhook is not set up
 	 */

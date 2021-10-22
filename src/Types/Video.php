@@ -9,9 +9,9 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Video Class
- * 
+ *
  * This object represents a video file.
  *
  * @link https://core.telegram.org/bots/api#video
@@ -21,7 +21,7 @@ class Video extends Type
     /**
      * getTypeVariables function
      * To specify the type of value of Variables
-     * 
+     *
      * @return array
      */
     protected function getTypeVariables()

@@ -7,7 +7,7 @@
 
 namespace TelegramBotPHP\Response;
 
-/** 
+/**
  * Response Class
  */
 class Response
@@ -48,7 +48,7 @@ class Response
     {
         $resultType = Type::getOnSuccess($this->method);
 
-        /* 
+        /*
         $nonObjectTypes = [
             true,
             'string',
@@ -82,7 +82,7 @@ class Response
 
     /**
      * getRequestMethod function
-     * 
+     *
      * @return string
      */
     public function getRequestMethod(): string
@@ -92,7 +92,7 @@ class Response
 
     /**
      * getRequestParameters function
-     * 
+     *
      * @return array
      */
     public function getRequestParameters(): array
@@ -102,7 +102,7 @@ class Response
 
     /**
      * getResponseData function
-     * 
+     *
      * @return array
      */
     public function getResponseData(): array
@@ -112,7 +112,7 @@ class Response
 
     /**
      * getResult function
-     * 
+     *
      * @return array|object|true
      */
     public function getResult()
@@ -122,7 +122,7 @@ class Response
 
     /**
      * isOk function
-     * 
+     *
      * @return bool
      */
     public function isOk()
@@ -132,7 +132,7 @@ class Response
 
     /**
      * getDescription function
-     * 
+     *
      * @return string|null
      */
     public function getDescription()
@@ -142,7 +142,7 @@ class Response
 
     /**
      * getErrorCode function
-     * 
+     *
      * @return int|null
      */
     public function getErrorCode()

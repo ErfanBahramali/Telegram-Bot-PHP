@@ -11,9 +11,9 @@ use TelegramBotPHP\constants\UpdateType;
 
 trait Forward
 {
-    /** 
+    /**
      * getForwardUserId function
-     * 
+     *
      * @return int|null Unique identifier for this user or bot. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier.
 
      */
@@ -30,9 +30,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * forwardUserIsBot function
-     * 
+     *
      * @return bool|null True, if this user is a bot
      */
     public static function forwardUserIsBot()
@@ -48,9 +48,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardFirstName function
-     * 
+     *
      * @return string|null User's or bot's first name
      */
     public static function getForwardUserFirstName()
@@ -66,9 +66,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardLastName function
-     * 
+     *
      * @return string|null User's or bot's last name
      */
     public static function getForwardUserLastName()
@@ -84,9 +84,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardUserUsername function
-     * 
+     *
      * @return string|null
      */
     public static function getForwardUserUsername()
@@ -102,10 +102,10 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardUserLanguageCode function
-     * 
-     * @return string|null [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language 
+     *
+     * @return string|null [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language
      */
     public static function getForwardUserLanguageCode()
     {
@@ -120,9 +120,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * forwardUserCanJoinGroups function
-     * 
+     *
      * @return bool|null True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
      */
     public static function forwardUserCanJoinGroups()
@@ -138,9 +138,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * forwardUserCanReadAllGroupMessages function
-     * 
+     *
      * @return bool|null True, if [privacy mode](https://core.telegram.org/bots#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
      */
     public static function forwardUserCanReadAllGroupMessages()
@@ -156,9 +156,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * forwardUserSupportsInlineQueries function
-     * 
+     *
      * @return bool|null True, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
      */
     public static function forwardUserSupportsInlineQueries()
@@ -174,9 +174,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardChatId function
-     * 
+     *
      * @return int|null Unique identifier for this chat. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier.
      */
     public static function getForwardChatId()
@@ -192,9 +192,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardChatType function
-     * 
+     *
      * @return string|null Type of chat, can be either “private”, “group”, “supergroup” or “channel”
      */
     public static function getForwardChatType()
@@ -210,9 +210,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardChatTitle function
-     * 
+     *
      * @return string|null Title, for supergroups, channels and group chats
      */
     public static function getForwardChatTitle()
@@ -228,9 +228,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardChatUsername function
-     * 
+     *
      * @return string|null Username, for private chats, supergroups and channels if available
      */
     public static function getForwardChatUsername()
@@ -246,9 +246,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardChatFirstName function
-     * 
+     *
      * @return string|null First name of the other party in a private chat
      */
     public static function getForwardChatFirstName()
@@ -264,9 +264,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardChatLastName function
-     * 
+     *
      * @return string|null Last name of the other party in a private chat
      */
     public static function getForwardChatLastName()
@@ -282,9 +282,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardMessageId function
-     * 
+     *
      * @return int|null For messages forwarded from channels, identifier of the original message in the channel
      */
     public static function getForwardMessageId()
@@ -300,9 +300,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardSignature function
-     * 
+     *
      * @return string|null For messages forwarded from channels, signature of the post author if present
      */
     public static function getForwardSignature()
@@ -318,9 +318,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardSenderName function
-     * 
+     *
      * @return string|null Sender's name for messages forwarded from users who disallow adding a link to their account in forwarded messages
      */
     public static function getForwardSenderName()
@@ -336,9 +336,9 @@ trait Forward
         }
     }
 
-    /** 
+    /**
      * getForwardDate function
-     * 
+     *
      * @return int|null For forwarded messages, date the original message was sent in Unix time
      */
     public static function getForwardDate()

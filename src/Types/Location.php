@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * Location Class
- * 
+ *
  * This object represents a point on the map.
  *
  * @link https://core.telegram.org/bots/api#location
  */
 class Location extends Type
 {
-    
+
 	/**
 	 * Longitude as defined by sender
 	 */

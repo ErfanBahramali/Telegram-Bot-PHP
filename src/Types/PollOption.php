@@ -9,16 +9,16 @@ namespace TelegramBotPHP\Types;
 
 use TelegramBotPHP\Type;
 
-/** 
+/**
  * PollOption Class
- * 
+ *
  * This object contains information about one answer option in a poll.
  *
  * @link https://core.telegram.org/bots/api#polloption
  */
 class PollOption extends Type
 {
-    
+
 	/**
 	 * Option text, 1-100 characters
 	 */

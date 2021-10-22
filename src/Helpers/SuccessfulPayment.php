@@ -12,9 +12,9 @@ use TelegramBotPHP\constants\UpdateType;
 trait SuccessfulPayment
 {
 
-    /** 
+    /**
      * getSuccessfulPaymentCurrency function
-     * 
+     *
      * @return string|null Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code
      */
     public static function getSuccessfulPaymentCurrency()
@@ -32,9 +32,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentTotalAmount function
-     * 
+     *
      * @return int|null Total price in the smallest units of the currency (integer, not float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the exp parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
      */
     public static function getSuccessfulPaymentTotalAmount()
@@ -51,10 +51,10 @@ trait SuccessfulPayment
                 break;
         }
     }
-    
-    /** 
+
+    /**
      * getSuccessfulPaymentInvoicePayload function
-     * 
+     *
      * @return string|null Bot specified invoice payload
      */
     public static function getSuccessfulPaymentInvoicePayload()
@@ -71,10 +71,10 @@ trait SuccessfulPayment
                 break;
         }
     }
-    
-    /** 
+
+    /**
      * getSuccessfulPaymentShippingOptionId function
-     * 
+     *
      * @return string|null Identifier of the shipping option chosen by the user
      */
     public static function getSuccessfulPaymentShippingOptionId()
@@ -91,10 +91,10 @@ trait SuccessfulPayment
                 break;
         }
     }
-    
-    /** 
+
+    /**
      * getSuccessfulPaymentOrderInfoName function
-     * 
+     *
      * @return string|null User name
      */
     public static function getSuccessfulPaymentOrderInfoName()
@@ -112,9 +112,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoPhoneNumber function
-     * 
+     *
      * @return string|null User's phone number
      */
     public static function getSuccessfulPaymentOrderInfoPhoneNumber()
@@ -132,9 +132,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoEmail function
-     * 
+     *
      * @return string|null User email
      */
     public static function getSuccessfulPaymentOrderInfoEmail()
@@ -152,9 +152,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoShippingAddressCountryCode function
-     * 
+     *
      * @return string|null ISO 3166-1 alpha-2 country code
      */
     public static function getSuccessfulPaymentOrderInfoShippingAddressCountryCode()
@@ -172,9 +172,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoShippingAddressState function
-     * 
+     *
      * @return string|null State, if applicable
      */
     public static function getSuccessfulPaymentOrderInfoShippingAddressState()
@@ -192,9 +192,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoShippingAddressStreetLine1 function
-     * 
+     *
      * @return string|null First line for the address
      */
     public static function getSuccessfulPaymentOrderInfoShippingAddressStreetLine1()
@@ -212,9 +212,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoShippingAddressStreetLine2 function
-     * 
+     *
      * @return string|null Second line for the address
      */
     public static function getSuccessfulPaymentOrderInfoShippingAddressStreetLine2()
@@ -232,9 +232,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentOrderInfoShippingAddressPostCode function
-     * 
+     *
      * @return string|null Address post code
      */
     public static function getSuccessfulPaymentOrderInfoShippingAddressPostCode()
@@ -252,9 +252,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentTelegramPaymentChargeId function
-     * 
+     *
      * @return string|null Telegram payment identifier
      */
     public static function getSuccessfulPaymentTelegramPaymentChargeId()
@@ -272,9 +272,9 @@ trait SuccessfulPayment
         }
     }
 
-    /** 
+    /**
      * getSuccessfulPaymentProviderPaymentChargeId function
-     * 
+     *
      * @return string|null Provider payment identifier
      */
     public static function getSuccessfulPaymentProviderPaymentChargeId()

@@ -27,9 +27,9 @@ class Helper
         self::$updateContent = self::$input[self::$updateType];
     }
 
-    /** 
+    /**
      * getUpdate function
-     * 
+     *
      * @return object|null
      */
     public static function getInput()
@@ -37,9 +37,9 @@ class Helper
         return self::$input;
     }
 
-    /** 
+    /**
      * getUpdateType function
-     * 
+     *
      * @return object|null
      */
     public static function getUpdateType()
@@ -47,9 +47,9 @@ class Helper
         return array_keys(self::$input)[1];
     }
 
-    /** 
+    /**
      * updateTypeIsMessage fucntion
-     * 
+     *
      * @return bool return true if updateType is message
      */
     public static function updateTypeIsMessage()
@@ -57,9 +57,9 @@ class Helper
         return (self::$updateType === UpdateType::MESSAGE);
     }
 
-    /** 
+    /**
      * updateTypeIsEditedMessage fucntion
-     * 
+     *
      * @return bool return true if updateType is edited message
      */
     public static function updateTypeIsEditedMessage()
@@ -67,9 +67,9 @@ class Helper
         return (self::$updateType === UpdateType::EDITED_MESSAGE);
     }
 
-    /** 
+    /**
      * updateTypeIsChannelPost fucntion
-     * 
+     *
      * @return bool return true if updateType is Channel post
      */
     public static function updateTypeIsChannelPost()
@@ -77,9 +77,9 @@ class Helper
         return (self::$updateType === UpdateType::CHANNEL_POST);
     }
 
-    /** 
+    /**
      * updateTypeIsEditedChannelPost fucntion
-     * 
+     *
      * @return bool return true if updateType is edited Channel post
      */
     public static function updateTypeIsEditedChannelPost()
@@ -87,9 +87,9 @@ class Helper
         return (self::$updateType === UpdateType::EDITED_CHANNEL_POST);
     }
 
-    /** 
+    /**
      * updateTypeIsInlineQuery fucntion
-     * 
+     *
      * @return bool return true if updateType is inline query
      */
     public static function updateTypeIsInlineQuery()
@@ -97,9 +97,9 @@ class Helper
         return (self::$updateType === UpdateType::INLINE_QUERY);
     }
 
-    /** 
+    /**
      * updateTypeIsChosenInlineResult fucntion
-     * 
+     *
      * @return bool return true if updateType is chosen inline result
      */
     public static function updateTypeIsChosenInlineResult()
@@ -107,9 +107,9 @@ class Helper
         return (self::$updateType === UpdateType::CHOSEN_INLINE_RESULT);
     }
 
-    /** 
+    /**
      * updateTypeIsCallbackQuery fucntion
-     * 
+     *
      * @return bool return true if updateType is callback query
      */
     public static function updateTypeIsCallbackQuery()
@@ -117,9 +117,9 @@ class Helper
         return (self::$updateType === UpdateType::CALLBACK_QUERY);
     }
 
-    /** 
+    /**
      * updateTypeIsShippingQuery fucntion
-     * 
+     *
      * @return bool return true if updateType is shipping query
      */
     public static function updateTypeIsShippingQuery()
@@ -127,9 +127,9 @@ class Helper
         return (self::$updateType === UpdateType::SHIPPING_QUERY);
     }
 
-    /** 
+    /**
      * updateTypeIsPreCheckoutQuery fucntion
-     * 
+     *
      * @return bool return true if updateType is pre checkout query
      */
     public static function updateTypeIsPreCheckoutQuery()
@@ -137,9 +137,9 @@ class Helper
         return (self::$updateType === UpdateType::PRE_CHECKOUT_QUERY);
     }
 
-    /** 
+    /**
      * updateTypeIsPoll fucntion
-     * 
+     *
      * @return bool return true if updateType is poll
      */
     public static function updateTypeIsPoll()
@@ -147,9 +147,9 @@ class Helper
         return (self::$updateType === UpdateType::POLL);
     }
 
-    /** 
+    /**
      * updateTypeIsPollAnswer fucntion
-     * 
+     *
      * @return bool return true if updateType is poll answer
      */
     public static function updateTypeIsPollAnswer()
@@ -157,9 +157,9 @@ class Helper
         return (self::$updateType === UpdateType::POLL_ANSWER);
     }
 
-    /** 
+    /**
      * updateTypeIsMyChatMember fucntion
-     * 
+     *
      * @return bool return true if updateType is my chat member
      */
     public static function updateTypeIsMyChatMember()
@@ -167,9 +167,9 @@ class Helper
         return (self::$updateType === UpdateType::MY_CHAT_MEMBER);
     }
 
-    /** 
+    /**
      * updateTypeIsChatMember fucntion
-     * 
+     *
      * @return bool return true if updateType is chat member
      */
     public static function updateTypeIsChatMember()
@@ -177,9 +177,9 @@ class Helper
         return (self::$updateType === UpdateType::CHAT_MEMBER);
     }
 
-    /** 
+    /**
      * isForwarded fucntion
-     * 
+     *
      * @return bool return true, if message is forwarded
      */
     public static function isForwarded()
@@ -187,9 +187,9 @@ class Helper
         return isset(self::$updateContent['forward_date']);
     }
 
-    /** 
+    /**
      * isRepliedMessage fucntion
-     * 
+     *
      * @return bool return true, if message is replied
      */
     public static function isRepliedMessage()
@@ -197,9 +197,9 @@ class Helper
         return isset(self::$updateContent['reply_to_message']);
     }
 
-    /** 
+    /**
      * getId function
-     * 
+     *
      * @return int|null Unique identifier
      */
     public static function getId()
@@ -218,9 +218,9 @@ class Helper
         }
     }
 
-    /** 
+    /**
      * getDate function
-     * 
+     *
      * @return int|null Date the message was sent in Unix time
      */
     public static function getDate()
@@ -240,9 +240,9 @@ class Helper
         }
     }
 
-    /** 
+    /**
      * getQuery function
-     * 
+     *
      * @return string|null Text of the query (up to 256 characters) or The query that was used to obtain the result
      */
     public static function getQuery()
