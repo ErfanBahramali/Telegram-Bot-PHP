@@ -35,7 +35,7 @@ class Format
             $text = Helper::getMessageText();
         }
 
-        $parseMode = strtolower($parseMode);
+        $parseMode = strtoupper($parseMode);
 
         if ($parseMode == ParseMode::MARKDOWNV2) {
 

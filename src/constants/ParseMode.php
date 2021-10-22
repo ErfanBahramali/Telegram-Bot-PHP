@@ -21,7 +21,7 @@ class ParseMode
      * To use this mode, pass MarkdownV2 in the parse_mode field.
      * @link https://core.telegram.org/bots/api#markdownv2-style
      */
-    public const MARKDOWNV2 = 'MarkdownV2';
+    public const MARKDOWNV2 = 'MARKDOWNV2';
 
     /**
      * HTML Parse mode
@@ -35,5 +35,5 @@ class ParseMode
      * This is a legacy mode, retained for backward compatibility. To use this mode, pass Markdown in the parse_mode field. 
      * @link https://core.telegram.org/bots/api#markdown-style
      */
-    public const MARKDOWN = 'Markdown';
+    public const MARKDOWN = 'MARKDOWN';
 }
