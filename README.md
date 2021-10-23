@@ -70,7 +70,7 @@ Create `composer.json` file and add
     }
 }
 ```
-and run 
+and run
 ```
 composer update
 ```
@@ -136,7 +136,7 @@ if (Bot::isTelegramIp($ip)) {
 if you are using a local bot api server, Set up your server url
 
 ```php
-/** 
+/**
  * bot api server url
  * @link https://core.telegram.org/bots/api#using-a-local-bot-api-server
  */
@@ -146,7 +146,7 @@ public string $botApiServerUrl = 'https://api.telegram.org/bot'; // https://exam
 if you are using a local bot api server, Set up your server file url, for download file
 
 ```php
-/** 
+/**
  * bot api server file url
  * @link https://core.telegram.org/bots/api#file
  */
@@ -158,7 +158,7 @@ Convert updates and response to objects for easier access
 Also you can set the variable to false and receive updates and response as an array
 
 ```php
-/** 
+/**
  * auto convert update and response to class For easier access
  */
 public bool $convertToObject = true;
@@ -167,7 +167,7 @@ public bool $convertToObject = true;
 If you don't want to use Webhook automatically, set this variable to false
 
 ```php
-/** 
+/**
  * Use webhook by default
  * if use getUpdates Set this variable to false
  */
@@ -178,9 +178,9 @@ If you don't want some methods to have some of their parameters automatically, s
 **Its accuracy is not always guaranteed**
 
 ```php
-/** 
+/**
  * In certain methods, some parameters are filled in automatically
- * 
+ *
  * For example, in `sendMessage` method,
 
  * You can, not set "chat_id",
@@ -195,7 +195,7 @@ If you want the program to continue after the error, set this variable to false
 **This is only for when the response code of the submitted request is not equal to 200**
 
 ```php
-/** 
+/**
  * Stop the program when it encounters an error
  */
 public bool $throwOnError = true;
@@ -218,7 +218,7 @@ At the end, the program is called and sends update and a list of all requests an
 ##### Example
 ```php
 $config->onLog = function (array $log) {
-    
+
     $log = json_encode($log);
     file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
 };
@@ -233,7 +233,7 @@ When the update is received, the function is called
 ##### Example
 ```php
 $config->onLogUpdate = function (array $update) {
-    
+
     $logUpdate = json_encode($update);
     file_put_contents(__DIR__ . '/Bot_update.log', "{$logUpdate}\n", FILE_APPEND);
 };
@@ -249,7 +249,7 @@ When a request is sent and the response code is 200
 ##### Example
 ```php
 $config->onLogRequestAndResponse = function (array $request, array $response) {
-    
+
     $logRequestAndResponse = [$request, $response];
     $logRequestAndResponse = json_encode($logRequestAndResponse);
     file_put_contents(__DIR__ . '/Bot_request_response.log', "{$logRequestAndResponse}\n", FILE_APPEND);
@@ -265,7 +265,7 @@ When a request is sent and the response code is not 200
 ##### Example
 ```php
 $config->onLogError = function (array $error) {
-    
+
     $logError = json_encode($error);
     file_put_contents(__DIR__ . '/Bot_error.log', "{$logError}\n", FILE_APPEND);
 };
@@ -286,7 +286,7 @@ It should only be used statically
 ```php
 
 MainConfig::$onLog = function (array $log) {
-    
+
     $log = json_encode($log);
     file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
 };
@@ -303,20 +303,20 @@ Just create an object of config class and change the values
 $config = new Config();
 
 $config->onLog = function (array $log) {
-    
+
     $log = json_encode($log);
     file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
 };
 
 $config->onLogUpdate = function ($update) {
-    
+
     $logUpdate = json_encode($update);
     file_put_contents(__DIR__ . '/Bot_update.log', "{$logUpdate}\n", FILE_APPEND);
 };
 
 // $config-> ... = ... ;
 ```
-### Set 
+### Set
 
 To use the created configuration, it can be set to the second parameter of the bot class
 
@@ -332,7 +332,7 @@ $config->throwOnError = true;
 $bot->config->throwOnError = true;
 
 $config->onLog = function (array $log) {
-    
+
     $log = json_encode($log);
     file_put_contents(__DIR__ . '/Bot.log', "{$log}\n", FILE_APPEND);
 };
@@ -345,7 +345,7 @@ There are two ways to receive the update
 
 **There is no difference between camelCase and under_score to get the parameters**
 
-### Webhook 
+### Webhook
 
 If you are using a webhook you can get updates using the 'getUpdate' and 'getInput' functions
 
@@ -396,15 +396,15 @@ $updates = $bot->getUpdates()->getResult();// Array ([0] => TelegramBotPHP\Types
 foreach ($updates as $key => $update) {
 
     $chatId = $update->chat->id; // 184171927
-    // or you can create helper 
+    // or you can create helper
 }
 ```
 
-## Methods 
+## Methods
 
 To use the methods, all you have to do is type in the name of the method and pass an array of parameters listed in the [Telegram api document](https://core.telegram.org/bots/api#available-methods).
 
-```php 
+```php
 
 // now you can use all of telegram methods
 
@@ -565,7 +565,7 @@ $bot->sendMessage([
 **There is no difference between camelCase and under_score to get the parameters**
 ### Get Response
 
-```php 
+```php
 $response = $bot->methodName([
     // parameters
     'example' => 'test',
@@ -653,7 +653,7 @@ $bot->downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
 
 // $fileSource = self::$config->botApiServerFileUrl . self::$token . '/' . 'documents/example.txt';
 
-// or 
+// or
 
 Bot::downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
 
@@ -667,7 +667,7 @@ Bot::downloadFile('documents/example.txt', __DIR__ . '/documents/example.txt');
 
 $bot->downloadFileByFileId('BQACAgQAAxkBAAJ0T2EJUDHTeXGcSBUrqFMgzZCQ0OJGAAIhCQACg2tJUEqm6016cXE9IAQ', __DIR__ . '/documents/example.txt');
 
-// or 
+// or
 
 Bot::downloadFileByFileId('BQACAgQAAxkBAAJ0T2EJUDHTeXGcSBUrqFMgzZCQ0OJGAAIhCQACg2tJUEqm6016cXE9IAQ', __DIR__ . '/documents/example.txt');
 
@@ -687,9 +687,9 @@ Helpers are auxiliary functions for receiving certain values or checking some it
 ```php
 
 $chatId = $bot->getHelper()->getChatId();
-// or 
+// or
 $chatId = Helper::getChatId();
-// or 
+// or
 $chatId = $bot->getUpdate()->message->chat->id;
 
 ```
@@ -742,7 +742,7 @@ $text = Format::markdown('');
 
 ```php
 // escape markdownV2 style
-$text = Format::markdownV2('*bold \*text*'); // \*bold \\\*text\* 
+$text = Format::markdownV2('*bold \*text*'); // \*bold \\\*text\*
 
 // escape HTML style
 $text = Format::html('<b>bold</b>, <strong>bold</strong>'); // &amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;, &amp;lt;strong&amp;gt;bold&amp;lt;/strong&amp;gt;
@@ -810,11 +810,11 @@ You can use the 'getUpdateType' helper to get the type of update and then check 
 $updateType = Helper::getUpdateType();
 
 if ($updateType === UpdateType::MESSAGE) {
-    
+
 } elseif ($updateType === UpdateType::EDITED_MESSAGE) {
-   
+
 } elseif ($updateType === UpdateType::CALLBACK_QUERY) {
-    
+
 }
 
 ```
@@ -847,7 +847,7 @@ Bot::sendChatAction([
 
 ## Examples
 
-* [`parrot`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/examples/Parrot/index.php) 
+* [`parrot`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/examples/Parrot/index.php)
 
 ## Troubleshooting
 
