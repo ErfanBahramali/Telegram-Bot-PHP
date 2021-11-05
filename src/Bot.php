@@ -122,8 +122,7 @@ class Bot
     public static function sendRequest(string $method, array $parameters = [], ?string $token = null)
     {
         $token = is_null($token) ? self::$token : $token;
-        $botApiServerUrl = self::$config->botApiServerUrl;
-        $url = "{$botApiServerUrl}{$token}/{$method}";
+        $url = self::$config->botApiServerUrl . "{$token}/{$method}";
 
         $ch = curl_init($url);
 
