@@ -1,5 +1,5 @@
 # Telegram Bot PHP
-Telegram Bot PHP is a PHP Library for interaction with [Telegram Bot API](https://core.telegram.org/bots/api) 5.3 (June 2021).
+Telegram Bot PHP is a PHP Library for interaction with [Telegram Bot API](https://core.telegram.org/bots/api) 5.4 (November 5, 2021).
 
 ## Table
 - [Requirements](#requirements)
