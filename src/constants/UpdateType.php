@@ -102,4 +102,11 @@ class UpdateType
      * @link https://core.telegram.org/bots/api#sendvideonote
      */
     public const CHAT_MEMBER = 'chat_member';
+
+    /**
+     * chat_join_request Update Type
+     * [optional] A request to join the chat has been sent. The bot must have the *can_invite_users* administrator right in the chat to receive these updates.
+     * @link https://core.telegram.org/bots/api#chatjoinrequest
+     */
+    public const CHAT_JOIN_REQUEST = 'chat_join_request';
 }

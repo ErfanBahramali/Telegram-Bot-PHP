@@ -117,4 +117,9 @@ class Update extends Type
 	 */
 	public ChatMemberUpdated $chatMember;
 
+	/**
+	 * [optional] A request to join the chat has been sent. The bot must have the *can_invite_users* administrator right in the chat to receive these updates.
+	 */
+	public ChatJoinRequest $chatJoinRequest;
+
 }
