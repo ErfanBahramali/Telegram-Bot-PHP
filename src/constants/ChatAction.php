@@ -62,6 +62,13 @@ class ChatAction
     public const UPLOAD_DOCUMENT = 'upload_document';
 
     /**
+     * Choose Sticker chat action
+     * choose_sticker for stickers
+     * @link https://core.telegram.org/bots/api#sendsticker
+     */
+    public const CHOOSE_STICKER = 'choose_sticker';
+
+    /**
      * Find Location chat action
      * find_location for location data
      * @link https://core.telegram.org/bots/api#sendlocation
