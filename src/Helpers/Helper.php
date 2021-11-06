@@ -28,7 +28,7 @@ class Helper
     }
 
     /**
-     * getUpdate function
+     * getInput function
      *
      * @return object|null
      */
