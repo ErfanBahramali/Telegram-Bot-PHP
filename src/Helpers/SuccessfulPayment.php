@@ -7,7 +7,7 @@
 
 namespace TelegramBotPHP\Helpers;
 
-use TelegramBotPHP\constants\UpdateType;
+use TelegramBotPHP\Constants\UpdateType;
 
 trait SuccessfulPayment
 {

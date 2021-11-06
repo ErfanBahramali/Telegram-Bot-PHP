@@ -5,7 +5,7 @@
  * https://github.com/ErfanBahramali/Telegram-Bot-PHP
  */
 
-namespace TelegramBotPHP\constants;
+namespace TelegramBotPHP\Constants;
 
 /**
  * @link https://core.telegram.org/bots/api#chatmember

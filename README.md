@@ -802,7 +802,7 @@ if (Helper::updateTypeIsMessage()) {
 
 You can use the 'getUpdateType' helper to get the type of update and then check it using different types of updates
 
-**You can see the full list of update types in the [`update type class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/constants/UpdateType.php)**
+**You can see the full list of update types in the [`update type class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/Constants/UpdateType.php)**
 
 #### Example:
 
@@ -823,7 +823,7 @@ if ($updateType === UpdateType::MESSAGE) {
 
 You can use existing chat actions to send chat action
 
-**You can see the full list of chat actions in the chat [`action class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/constants/ChatAction.php)**
+**You can see the full list of chat actions in the chat [`action class`](https://github.com/ErfanBahramali/Telegram-Bot-PHP/blob/main/src/Constants/ChatAction.php)**
 
 #### Example:
 

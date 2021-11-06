@@ -7,7 +7,7 @@
 
 namespace TelegramBotPHP;
 
-use TelegramBotPHP\constants\ParseMode;
+use TelegramBotPHP\Constants\ParseMode;
 use TelegramBotPHP\Helpers\Helper;
 
 class Format

@@ -5,7 +5,7 @@
  * https://github.com/ErfanBahramali/Telegram-Bot-PHP
  */
 
-namespace TelegramBotPHP\constants;
+namespace TelegramBotPHP\Constants;
 
 /**
  * Mode for parsing entities in the message text. See formatting options for more details.
