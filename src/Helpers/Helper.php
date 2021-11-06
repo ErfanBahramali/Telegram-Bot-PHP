@@ -178,6 +178,16 @@ class Helper
     }
 
     /**
+     * updateTypeIsChatJoinRequest fucntion
+     *
+     * @return bool return true if updateType is chat join request
+     */
+    public static function updateTypeIsChatJoinRequest()
+    {
+        return (self::$updateType === UpdateType::CHAT_JOIN_REQUEST);
+    }
+
+    /**
      * isForwarded fucntion
      *
      * @return bool return true, if message is forwarded
