@@ -11,7 +11,6 @@ use TelegramBotPHP\Constants\UpdateType;
 
 trait SuccessfulPayment
 {
-
     /**
      * getSuccessfulPaymentCurrency function
      *
