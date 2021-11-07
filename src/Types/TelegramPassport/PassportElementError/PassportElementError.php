@@ -7,6 +7,7 @@
 
 namespace TelegramBotPHP\Types\TelegramPassport\PassportElementError;
 
+use TelegramBotPHP\Constants\PassportElementErrorSource;
 use TelegramBotPHP\Type;
 
 /**
@@ -40,15 +41,15 @@ class PassportElementError extends Type
         return [
             'name' => 'source',
             'datas' => [
-                'data' => PassportElementErrorDataField::class,
-                'front_side' => PassportElementErrorFrontSide::class,
-                'reverse_side' => PassportElementErrorReverseSide::class,
-                'selfie' => PassportElementErrorSelfie::class,
-                'file' => PassportElementErrorFile::class,
-                'files' => PassportElementErrorFiles::class,
-                'translation_file' => PassportElementErrorTranslationFile::class,
-                'translation_files' => PassportElementErrorTranslationFiles::class,
-                'unspecified' => PassportElementErrorUnspecified::class,
+                PassportElementErrorSource::DATA => PassportElementErrorDataField::class,
+                PassportElementErrorSource::FRONT_SIDE => PassportElementErrorFrontSide::class,
+                PassportElementErrorSource::REVERSE_SIDE => PassportElementErrorReverseSide::class,
+                PassportElementErrorSource::SELFIE => PassportElementErrorSelfie::class,
+                PassportElementErrorSource::FILE => PassportElementErrorFile::class,
+                PassportElementErrorSource::FILES => PassportElementErrorFiles::class,
+                PassportElementErrorSource::TRANSLATION_FILE => PassportElementErrorTranslationFile::class,
+                PassportElementErrorSource::TRANSLATION_FILES => PassportElementErrorTranslationFiles::class,
+                PassportElementErrorSource::UNSPECIFIED => PassportElementErrorUnspecified::class,
             ],
         ];
     }

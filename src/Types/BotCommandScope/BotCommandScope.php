@@ -7,6 +7,7 @@
 
 namespace TelegramBotPHP\Types\BotCommandScope;
 
+use TelegramBotPHP\Constants\BotCommandScopeType;
 use TelegramBotPHP\Type;
 
 /**
@@ -38,13 +39,13 @@ class BotCommandScope extends Type
         return [
             'name' => 'type',
             'datas' => [
-                'default' => BotCommandScopeDefault::class,
-                'all_private_chats' => BotCommandScopeAllPrivateChats::class,
-                'all_group_chats' => BotCommandScopeAllGroupChats::class,
-                'all_chat_administrators' => BotCommandScopeAllChatAdministrators::class,
-                'chat' => BotCommandScopeChat::class,
-                'chat_administrators' => BotCommandScopeChatAdministrators::class,
-                'chat_member' => BotCommandScopeChatMember::class,
+                BotCommandScopeType::DEFAULT => BotCommandScopeDefault::class,
+                BotCommandScopeType::ALL_PRIVATE_CHATS => BotCommandScopeAllPrivateChats::class,
+                BotCommandScopeType::ALL_GROUP_CHATS => BotCommandScopeAllGroupChats::class,
+                BotCommandScopeType::ALL_CHAT_ADMINISTRATORS => BotCommandScopeAllChatAdministrators::class,
+                BotCommandScopeType::CHAT => BotCommandScopeChat::class,
+                BotCommandScopeType::CHAT_ADMINISTRATORS => BotCommandScopeChatAdministrators::class,
+                BotCommandScopeType::CHAT_MEMBER => BotCommandScopeChatMember::class,
             ],
         ];
     }

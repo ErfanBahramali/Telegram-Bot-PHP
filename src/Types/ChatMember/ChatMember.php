@@ -7,6 +7,7 @@
 
 namespace TelegramBotPHP\Types\ChatMember;
 
+use TelegramBotPHP\Constants\ChatMemberStatus;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\User;
 
@@ -51,12 +52,12 @@ class ChatMember extends Type
         return [
             'name' => 'status',
             'datas' => [
-                'creator' => ChatMemberOwner::class,
-                'administrator' => ChatMemberAdministrator::class,
-                'member' => ChatMemberMember::class,
-                'restricted' => ChatMemberRestricted::class,
-                'left' => ChatMemberLeft::class,
-                'kicked' => ChatMemberBanned::class,
+                ChatMemberStatus::CREATOR => ChatMemberOwner::class,
+                ChatMemberStatus::ADMINISTRATOR => ChatMemberAdministrator::class,
+                ChatMemberStatus::MEMBER => ChatMemberMember::class,
+                ChatMemberStatus::RESTRICTED => ChatMemberRestricted::class,
+                ChatMemberStatus::LEFT => ChatMemberLeft::class,
+                ChatMemberStatus::KICKED => ChatMemberBanned::class,
             ],
         ];
     }

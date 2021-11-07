@@ -7,6 +7,7 @@
 
 namespace TelegramBotPHP\Types\InputMedia;
 
+use TelegramBotPHP\Constants\InputMediaType;
 use TelegramBotPHP\Type;
 use TelegramBotPHP\Types\MessageEntity;
 
@@ -50,11 +51,11 @@ class InputMedia extends Type
         return [
             'name' => 'type',
             'datas' => [
-                'photo' => InputMediaPhoto::class,
-                'video' => InputMediaVideo::class,
-                'animation' => InputMediaAnimation::class,
-                'audio' => InputMediaAudio::class,
-                'document' => InputMediaDocument::class,
+                InputMediaType::PHOTO => InputMediaPhoto::class,
+                InputMediaType::VIDEO => InputMediaVideo::class,
+                InputMediaType::ANIMATION => InputMediaAnimation::class,
+                InputMediaType::AUDIO => InputMediaAudio::class,
+                InputMediaType::DOCUMENT => InputMediaDocument::class,
             ],
         ];
     }
